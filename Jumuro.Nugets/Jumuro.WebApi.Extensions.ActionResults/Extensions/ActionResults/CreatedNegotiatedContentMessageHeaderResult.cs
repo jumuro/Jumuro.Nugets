@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Formatting;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -9,10 +12,10 @@ using System.Web.Http.Results;
 namespace Jumuro.WebApi.Extensions.ActionResults
 {
     /// <summary>
-    /// Represents an action result that performs content negotiation and returns an <see cref="F:System.Net.HttpStatusCode.OK"/> response and a "Message" header when it succeeds.
+    /// Represents an action result that performs content negotiation and returns a <see cref="F:System.Net.HttpStatusCode.Created"/> response and a "Message" header when it succeeds.
     /// </summary>
     /// <typeparam name="T">The type of content in the entity body.</typeparam>
-    public class OkNegotiatedContentMessageHeaderResult<T> : OkNegotiatedContentResult<T>
+    public class CreatedNegotiatedContentMessageHeaderResult<T> : CreatedNegotiatedContentResult<T>
     {
         private readonly string _message;
 
@@ -28,33 +31,35 @@ namespace Jumuro.WebApi.Extensions.ActionResults
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:System.Web.Http.Results.OkNegotiatedContentResult`1"/> class with the values provided.
+        /// Initializes a new instance of the <see cref="T:Jumuro.WebApi.Extensions.ActionResults.CreatedNegotiatedContentMessageHeaderResult"/> class with the values provided.
         /// </summary>
-        /// <param name="content">The content value to negotiate and format in the entity body.</param>
+        /// <param name="location">The content value to negotiate and format in the entity body.</param>
+        /// <param name="content">The location at which the content has been created.</param>
         /// <param name="message">The message to include in the "Message" header.</param>
         /// <param name="contentNegotiator">The content negotiator to handle content negotiation.</param>
         /// <param name="request">The request message which led to this result.</param>
         /// <param name="formatters">The formatters to use to negotiate and format the content.</param>
-        public OkNegotiatedContentMessageHeaderResult(T content, string message, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable<MediaTypeFormatter> formatters)
-            : base(content, contentNegotiator, request, formatters)
+        public CreatedNegotiatedContentMessageHeaderResult(Uri location, T content, string message, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable<MediaTypeFormatter> formatters)
+            : base(location, content, contentNegotiator, request, formatters)
         {
             this._message = message;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Jumuro.WebApi.Extensions.ActionResults.OkNegotiatedContentMessageHeaderResult"/> class with the values provided.
+        /// Initializes a new instance of the <see cref="T:Jumuro.WebApi.Extensions.ActionResults.CreatedNegotiatedContentMessageHeaderResult"/> class with the values provided.
         /// </summary>
+        /// <param name="location">The location at which the content has been created.</param>
         /// <param name="content">The content value to negotiate and format in the entity body.</param>
         /// <param name="message">The message to include in the "Message" header.</param>
         /// <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
-        public OkNegotiatedContentMessageHeaderResult(T content, string message, ApiController controller)
-            : base(content, controller)
+        public CreatedNegotiatedContentMessageHeaderResult(Uri location, T content, string message, ApiController controller)
+            : base(location, content, controller)
         {
             this._message = message;
         }
 
         /// <summary>
-        /// Executes asynchronously the operation of the ok negotiated content result.
+        /// Executes asynchronously the operation of the created negotiated content result.
         /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>

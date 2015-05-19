@@ -92,57 +92,7 @@ namespace Jumuro.WebApi.Extensions.ActionResults
         }
 
         /// <summary>
-        /// Gets the content value to negotiate and format in the entity body.
-        /// </summary>
-        public T Content
-        {
-            get
-            {
-                return base.Content;
-            }
-        }
-
-        /// <summary>
-        /// Gets the content negotiator to handle content negotiation.
-        /// </summary>
-        public IContentNegotiator ContentNegotiator
-        {
-            get
-            {
-                return base.ContentNegotiator;
-            }
-        }
-
-        /// <summary>
-        /// Gets the request message which led to this result.
-        /// </summary>
-        public HttpRequestMessage Request
-        {
-            get
-            {
-                return base.Request;
-            }
-        }
-
-        /// <summary>
-        /// Gets the formatters to use to negotiate and format the content.
-        /// </summary>
-        public IEnumerable<MediaTypeFormatter> Formatters
-        {
-            get
-            {
-                return base.Formatters;
-            }
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:Espa.WebApi.Extensions.ActionResults.OkNegotiatedContentPaginatioHeadersResult"/> class with the values provided.
-        /// </summary>
-        /// <param name="content">The content value to negotiate and format in the entity body.</param>
-        /// <param name="message">The message to include in the "Message" header.</param>
-        /// <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:Espa.WebApi.Extensions.ActionResults.OkNegotiatedContentMessageHeaderResult"/> class with the values provided.
+        /// Initializes a new instance of the <see cref="T:Jumuro.WebApi.Extensions.ActionResults.OkNegotiatedContentPaginatioHeadersResult"/> class with the values provided.
         /// </summary>
         /// <param name="content">The content value to negotiate and format in the entity body.</param>
         /// <param name="currentPage">The value to include in the "X-Pagination-Current-Page" header.</param>

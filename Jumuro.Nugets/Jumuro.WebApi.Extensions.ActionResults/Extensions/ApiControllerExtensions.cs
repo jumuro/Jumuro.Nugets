@@ -9,6 +9,9 @@ using System.Net.Http.Formatting;
 
 namespace Jumuro.WebApi.Extensions
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class ApiControllerExtensions
     {
         #region NotFound
@@ -25,39 +28,29 @@ namespace Jumuro.WebApi.Extensions
         #endregion
 
         #region Created
+
         /// <summary>
         /// Created
         /// </summary>
-        /// <param name="oController"></param>
-        /// <param name="sMessage"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="controller"></param>
+        /// <param name="location"></param>
+        /// <param name="content"></param>
+        /// <param name="message"></param>
         /// <returns></returns>
-        public static CreatedNoLocationResult<T> Created<T>(this ApiController oController, T oContent, string sMessage)
+        public static CreatedNegotiatedContentMessageHeaderResult<T> Created<T>(this ApiController controller, Uri location, T content, string message)
         {
-            IContentNegotiator negotiator = oController.Configuration.Services.GetContentNegotiator();
-            ContentNegotiationResult result = negotiator.Negotiate(typeof(T), oController.Request, oController.Configuration.Formatters);
-            var bestMatchFormatter = result.Formatter;
-            var mediaType = result.MediaType.MediaType;
-
-            return new CreatedNoLocationResult<T>(oContent, sMessage, oController.Request, bestMatchFormatter, mediaType);
+            return new CreatedNegotiatedContentMessageHeaderResult<T>(location, content, message, controller);
         }
+
         #endregion
 
         #region Ok
-        ///// <summary>
-        ///// Ok
-        ///// </summary>
-        ///// <param name="oController"></param>
-        ///// <param name="sMessage"></param>
-        ///// <returns></returns>
-        //public static OkMessageResult<T> Ok<T>(this ApiController oController, T oContent, string sMessage)
-        //{
-        //    return new OkMessageResult<T>(oContent, sMessage, oController.Request);
-        //}
-
         /// <summary>
         /// Ok
         /// </summary>
         /// <param name="controller"></param>
+        /// <param name="content"></param>
         /// <param name="message"></param>
         /// <returns></returns>
         public static OkNegotiatedContentMessageHeaderResult<T> Ok<T>(this ApiController controller, T content, string message)
