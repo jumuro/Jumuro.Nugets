@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ActionResults\ActionResultHelper.cs" />
+    <Compile Include="Extensions\ActionResults\OkNegotiatedContentMessageHeaderResult.cs" />
+    <Compile Include="Extensions\ActionResults\OkNegotiatedContentPaginatioHeadersResult.cs" />
     <Compile Include="Extensions\ApiControllerExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
