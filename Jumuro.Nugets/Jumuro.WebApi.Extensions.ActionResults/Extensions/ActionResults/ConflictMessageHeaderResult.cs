@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Formatting;
+﻿using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -9,10 +7,9 @@ using System.Web.Http.Results;
 namespace Jumuro.WebApi.Extensions.ActionResults
 {
     /// <summary>
-    /// Represents an action result that performs content negotiation and returns an <see cref="F:System.Net.HttpStatusCode.OK"/> response and a "Message" header when it succeeds.
+    /// Represents an action result that returns an empty <see cref="F:System.Net.HttpStatusCode.Conflict"/> response and a "Message" header.
     /// </summary>
-    /// <typeparam name="T">The type of content in the entity body.</typeparam>
-    public class OkNegotiatedContentMessageHeaderResult<T> : OkNegotiatedContentResult<T>
+    public class ConflictMessageHeaderResult : ConflictResult
     {
         private readonly string _message;
 
@@ -28,27 +25,23 @@ namespace Jumuro.WebApi.Extensions.ActionResults
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Jumuro.WebApi.Extensions.ActionResults.OkNegotiatedContentMessageHeaderResult"/> class with the values provided.
+        /// Initializes a new instance of the <see cref="T:Jumuro.WebApi.Extensions.ActionResults.ConflictMessageHeaderResult"/> class with the values provided.
         /// </summary>
-        /// <param name="content">The content value to negotiate and format in the entity body.</param>
         /// <param name="message">The message to include in the "Message" header.</param>
-        /// <param name="contentNegotiator">The content negotiator to handle content negotiation.</param>
         /// <param name="request">The request message which led to this result.</param>
-        /// <param name="formatters">The formatters to use to negotiate and format the content.</param>
-        public OkNegotiatedContentMessageHeaderResult(T content, string message, IContentNegotiator contentNegotiator, HttpRequestMessage request, IEnumerable<MediaTypeFormatter> formatters)
-            : base(content, contentNegotiator, request, formatters)
+        public ConflictMessageHeaderResult(string message, HttpRequestMessage request)
+            : base(request)
         {
             this._message = message;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Jumuro.WebApi.Extensions.ActionResults.OkNegotiatedContentMessageHeaderResult"/> class with the values provided.
+        /// Initializes a new instance of the <see cref="T:Jumuro.WebApi.Extensions.ActionResults.ConflictMessageHeaderResult"/> class with the values provided.
         /// </summary>
-        /// <param name="content">The content value to negotiate and format in the entity body.</param>
         /// <param name="message">The message to include in the "Message" header.</param>
         /// <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
-        public OkNegotiatedContentMessageHeaderResult(T content, string message, ApiController controller)
-            : base(content, controller)
+        public ConflictMessageHeaderResult(string message, ApiController controller)
+            : base(controller)
         {
             this._message = message;
         }

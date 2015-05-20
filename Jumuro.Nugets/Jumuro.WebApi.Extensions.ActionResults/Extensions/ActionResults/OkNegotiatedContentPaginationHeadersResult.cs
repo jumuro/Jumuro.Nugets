@@ -15,7 +15,7 @@ namespace Jumuro.WebApi.Extensions.ActionResults
     /// "X-Pagination-Current-Page", "X-Pagination-Per-Page", "X-Pagination-Total-Pages", "X-Pagination-Total-Entries" and "Link" headers when it succeeds.
     /// </summary>
     /// <typeparam name="T">The type of content in the entity body.</typeparam>
-    public class OkNegotiatedContentPaginatioHeadersResult<T> : OkNegotiatedContentResult<T>
+    public class OkNegotiatedContentPaginationHeadersResult<T> : OkNegotiatedContentResult<T>
     {
         private readonly string _currentPageParamName;
         private readonly string _perPageParamName;
@@ -92,7 +92,7 @@ namespace Jumuro.WebApi.Extensions.ActionResults
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Jumuro.WebApi.Extensions.ActionResults.OkNegotiatedContentPaginatioHeadersResult"/> class with the values provided.
+        /// Initializes a new instance of the <see cref="T:Jumuro.WebApi.Extensions.ActionResults.OkNegotiatedContentPaginationHeadersResult"/> class with the values provided.
         /// </summary>
         /// <param name="content">The content value to negotiate and format in the entity body.</param>
         /// <param name="currentPage">The value to include in the "X-Pagination-Current-Page" header.</param>
@@ -102,7 +102,7 @@ namespace Jumuro.WebApi.Extensions.ActionResults
         /// <param name="currentPageParamName">The name of the pagination querystring param to indicate the current page.</param>
         /// <param name="perPageParamName">The name of the pagination querystring param to indicate the per page entries.</param>
         /// <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
-        public OkNegotiatedContentPaginatioHeadersResult(T content, int currentPage, int perPage, int totalPages, int totalEntries, string currentPageParamName, string perPageParamName, ApiController controller)
+        public OkNegotiatedContentPaginationHeadersResult(T content, int currentPage, int perPage, int totalPages, int totalEntries, string currentPageParamName, string perPageParamName, ApiController controller)
             : base(content, controller)
         {
             this._currentPage = currentPage;

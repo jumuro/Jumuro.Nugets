@@ -61,9 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ActionResults\ActionResultHelper.cs" />
+    <Compile Include="Extensions\ActionResults\ConflictMessageHeaderResult.cs" />
     <Compile Include="Extensions\ActionResults\CreatedNegotiatedContentMessageHeaderResult.cs" />
+    <Compile Include="Extensions\ActionResults\NotFoundMessageHeaderResult.cs" />
     <Compile Include="Extensions\ActionResults\OkNegotiatedContentMessageHeaderResult.cs" />
-    <Compile Include="Extensions\ActionResults\OkNegotiatedContentPaginatioHeadersResult.cs" />
+    <Compile Include="Extensions\ActionResults\OkNegotiatedContentPaginationHeadersResult.cs" />
     <Compile Include="Extensions\ApiControllerExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
