@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Jumuro.Security.Cryptography.Extensions
 {
+    /// <summary>
+    /// CryptographyExtensions class with some extension methods.
+    /// </summary>
     public static class CryptographyExtensions
     {
         #region Extension Methods

@@ -1,5 +1,23 @@
 ﻿angular
-    .module('jumuro.oAuth', ['jumuro.notificationChannel', 'ipCookie', 'toaster'])
+    .module('jumuro.oAuth', ['ipCookie', 'toaster'])
+    .run(oAuthRun);
+
+oAuthRun.$inject = ['$rootScope', 'oAuthService', '$location', 'toaster'];
+
+function oAuthRun($rootScope, oAuthService, $location, toaster) {
+    $rootScope.$on('$routeChangeStart', function (event, next, current) {
+        if (!oAuthService.isAuthenticated()) {
+            if ($location.path() !== '/login') {
+                toaster.pop('error', 'Access Denied', 'Access denied. Plese enter your user and password.')
+            }
+
+            $location.path('/login');
+        }
+    });
+}
+
+angular
+    .module('jumuro.oAuth')
     .config(config);
 
 config.$inject = ['$routeProvider', '$httpProvider', 'oAuthConstants'];

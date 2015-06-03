@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Jumuro.WebApi.Extensions.ActionResults</id>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
     <title>Jumuro WebApi Action Results Extensions</title>
     <authors>Jumuro</authors>
     <!--<projectUrl></projectUrl>
@@ -11,6 +11,7 @@
     <description>WebApi Action Results Extensions.</description>
     <releaseNotes>
       1.0.0.0 - First Version.
+      1.0.0.1 - Some improvements.
     </releaseNotes>
   </metadata>
   <files>

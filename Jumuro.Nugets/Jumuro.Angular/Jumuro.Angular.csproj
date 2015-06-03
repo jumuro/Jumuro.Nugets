@@ -61,8 +61,31 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorService.js" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorNotificationChannel.js" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.js.bundle" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js.map" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js.map" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.css" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\directives\jumuroSpinner.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\directives\jumuroSpinnerFinishRepeat.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\services\spinnerNotificationChannelService.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\templates\spinnerTemplate.html" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\environments\dev.json" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\environments\live.json" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\environments\test.json" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\module.min.js.map" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js.map" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.css.map" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -73,10 +96,17 @@
   <ItemGroup>
     <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.js" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\constants\appConfigConstants.js" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\constants\oAuthConstants.js" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\module.js" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\services\oAuthHttpInterceptor.js" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\services\oAuthService.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\constants\appConfigConstants.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\constants\gruntReplaceSource.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\constants\webapiConstants.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\grunt\WebApi.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\module.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

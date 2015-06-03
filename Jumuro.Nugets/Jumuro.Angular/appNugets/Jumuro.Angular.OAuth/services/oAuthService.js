@@ -4,20 +4,10 @@ angular
     .module('jumuro.oAuth')
     .service('oAuthService', oAuthService);
 
-oAuthService.$inject = ['$http', '$q', '$injector', 'ipCookie', 'oAuthConstants'];
+oAuthService.$inject = ['$http', '$q', '$injector', 'ipCookie', 'oAuthConstants', 'oAuthAppConfigConstants', '$location'];
 
-function oAuthService($http, $q, $injector, ipCookie, oAuthConstants) {
+function oAuthService($http, $q, $injector, ipCookie, oAuthConstants, oAuthAppConfigConstants, $location) {
     var refreshToken = function () {
-
-        var urls = JSON.parse(localStorage.getItem('apiUrlList'));
-        var oAuthURL = '';
-
-        for (var i = 0; i < urls.length; i++) {
-            if (urls[i].UrlName == 'OAuthURL') {
-                oAuthURL = urls[i].UrlValue;
-                break;
-            }
-        }
 
         var deferred = $q.defer();
 
@@ -27,8 +17,14 @@ function oAuthService($http, $q, $injector, ipCookie, oAuthConstants) {
         if (authData) {
             var data = "grant_type=refresh_token&refresh_token=" + authData.refresh_token + "&client_id=" + authData.client_id;
 
-            $http.post(oAuthURL, data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
-                //ipCookie.remove(oAuthConstants.oAuthCookieName);
+            $http.post(
+                oAuthAppConfigConstants.appConfig.oAuthURL,
+                data,
+                {
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                })
+                .success(function (response) {
+                
                 ipCookie(oAuthConstants.oAuthCookieName, response, { path: oAuthConstants.appPathName });
                 deferred.resolve(response);
 
@@ -41,25 +37,66 @@ function oAuthService($http, $q, $injector, ipCookie, oAuthConstants) {
         return deferred.promise;
     };
 
+    var toaster = $injector.get('toaster');
+
+    var logIn = function (postData) {
+
+        var deferred = $q.defer();
+
+        var data = "grant_type=password&username=" + postData.username + "&password=" + postData.password + "&client_id=" + oAuthAppConfigConstants.appConfig.oAuthClientId;
+
+        $http.post(
+            oAuthAppConfigConstants.appConfig.oAuthURL,
+            data,
+            {
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            }).success(function (data, status, headers, config) {
+                // Create cookie. TODO: we have to return user info
+                ipCookie(oAuthConstants.oAuthCookieName, data);
+                //Provisionally store user in a local storage until we return the user info from the oAuth api.
+                localStorage.setItem("login-info", JSON.stringify({ username: postData.username }));
+
+                deferred.resolve(data);
+            }).error(function (data, status, headers, config) {
+                deferred.reject(data);
+
+            });
+
+        return deferred.promise;
+    };
+
+
+    var getUserInfo = function () {
+        var userInfo = JSON.parse(localStorage.getItem("login-info"));
+
+        return userInfo;
+    }
+
+    var hasCookie = function () {
+        return ipCookie(oAuthConstants.oAuthCookieName);
+    }
+
     var logOut = function () {
         // Delete current cookie if it already exsits
         ipCookie.remove(oAuthConstants.oAuthCookieName, { path: oAuthConstants.appPathName });
 
-        // Ahora mismo no se va a ver el toaster ya que al cambiar href se va a servidor.
-        // Estudiar el ciclo de vida de la aplicación para que se haga todo en cliente
+        localStorage.removeItem("login-info");
 
-        var toaster = $injector.get('toaster');
-        toaster.pop('error', "Cookie error", "Authorization info not found. Trying to authorize again...");
+        $location.path('/login');
+    };
 
-        window.location.href = oAuthConstants.appPathName;
+    var isAuthenticated = function () {
+        var ok = ipCookie(oAuthConstants.oAuthCookieName);
+        //TODO: We may check some sort of route property like anonymous for static content routes.
+        return ok;
     };
 
     return {
-        refreshToken: function () {
-            return refreshToken();
-        },
-        logOut: function () {
-            return logOut();
-        }
+        refreshToken: refreshToken,
+        logOut: logOut,
+        logIn: logIn,
+        hasCookie: hasCookie,
+        getUserInfo: getUserInfo,
+        isAuthenticated: isAuthenticated
     };
 }
