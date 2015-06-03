@@ -4,30 +4,43 @@ angular
     .module('jumuro.oAuth')
     .factory('oAuthHttpInterceptor', oAuthHttpInterceptor);
 
-oAuthHttpInterceptor.$inject = ['$q', '$injector', 'ipCookie', 'oAuthConstants'];
+oAuthHttpInterceptor.$inject = ['$q', '$injector', 'ipCookie', 'oAuthConstants', 'toaster', '$location'];
 
-function oAuthHttpInterceptor($q, $injector, ipCookie, oAuthConstants) {
-    var authInterceptorServiceFactory = {};
+function oAuthHttpInterceptor($q, $injector, ipCookie, oAuthConstants, toaster, $location) {
+    var oAuthInterceptorServiceFactory = {};
 
     var _request = function (config) {
-        config.headers = config.headers || {};
+        if ($location.path() !== '/login') {
+            config.headers = config.headers || {};
 
-        //get the cookie
-        var authData = ipCookie(oAuthConstants.oAuthCookieName);
+            //get the cookie
+            var authData = ipCookie(oAuthConstants.oAuthCookieName);
 
-        if (authData) {
-            config.headers.Authorization = 'Bearer ' + authData.access_token;
-        }
-        else {
-            var authService = $injector.get('oAuthService');
-            authService.logOut();
+            if (authData) {
+                config.headers.Authorization = 'Bearer ' + authData.access_token;
+            }
+            else {
+                var authService = $injector.get('oAuthService');
+                authService.logOut();
+            }
         }
 
         return config;
     };
 
     var _responseError = function (rejection) {
-        if (rejection.status === 401) {
+        if (rejection.status === 400) {
+            if (rejection.data && rejection.data.message) {
+                toaster.pop('error', "Error", rejection.data.message);
+            }
+            else if (rejection.data && rejection.data.error) {
+                if (rejection.data.error === 'invalid_grant') {
+                    toaster.pop('error', "Error", rejection.data.error_description);
+                }
+            }
+
+        }
+        else if (rejection.status === 401) {
             var authService = $injector.get('oAuthService');
             var authData = ipCookie(oAuthConstants.oAuthCookieName);
             var $http = $http || $injector.get('$http');
@@ -47,13 +60,20 @@ function oAuthHttpInterceptor($q, $injector, ipCookie, oAuthConstants) {
 
             //window.location.path = oAuthConstants.appPathName;
         }
+        else if (rejection.status === 0 || rejection.status === 500) {
+            if (rejection.data && rejection.data.message) {
+                toaster.pop('error', "Error", rejection.data.message);
+            } else {
+                toaster.pop('error', "Error", rejection.data);
+            }
+        }
         else {
             return $q.reject(rejection);
         }
     };
 
-    authInterceptorServiceFactory.request = _request;
-    authInterceptorServiceFactory.responseError = _responseError;
+    oAuthInterceptorServiceFactory.request = _request;
+    oAuthInterceptorServiceFactory.responseError = _responseError;
 
-    return authInterceptorServiceFactory;
+    return oAuthInterceptorServiceFactory;
 }
