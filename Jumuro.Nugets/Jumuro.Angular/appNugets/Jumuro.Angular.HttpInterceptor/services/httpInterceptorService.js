@@ -1,7 +1,6 @@
 ﻿'use strict';
 
-angular
-    .module('jumuro.httpInterceptor')
+angular.module('jumuro.httpInterceptor')
     .service('httpInterceptorService', httpInterceptorService);
 
 httpInterceptorService.$inject = ['$q', '$injector', 'toaster', 'httpInterceptorNotificationChannelService'];

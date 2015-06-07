@@ -61,17 +61,39 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js" />
-    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js">
+      <DependentUpon>httpInterceptorBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js">
+      <DependentUpon>httpInterceptorBundle.js</DependentUpon>
+    </Content>
     <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\module.js" />
     <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorService.js" />
     <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorNotificationChannel.js" />
-    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.js.bundle" />
-    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js.map" />
-    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js.bundle" />
-    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js.map" />
-    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.js" />
-    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\bundle\modalBundle.js">
+      <DependentUpon>modalBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Modal\bundle\modalBundle.min.js">
+      <DependentUpon>modalBundle.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Modal\controllers\modalController.js" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\services\modalService.js" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\templates\modalConfirm.html" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\templates\modalError.html" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\templates\modalNotification.html" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.js">
+      <DependentUpon>oauthBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js">
+      <DependentUpon>oauthBundle.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.js">
+      <DependentUpon>spinnerBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js">
+      <DependentUpon>spinnerBundle.js</DependentUpon>
+    </Content>
     <Content Include="appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.css" />
     <Content Include="appNugets\Jumuro.Angular.Spinner\directives\jumuroSpinner.js" />
     <Content Include="appNugets\Jumuro.Angular.Spinner\directives\jumuroSpinnerFinishRepeat.js" />
@@ -82,10 +104,25 @@
     <Content Include="appNugets\Jumuro.Angular.WebApi\environments\live.json" />
     <Content Include="appNugets\Jumuro.Angular.WebApi\environments\test.json" />
     <Content Include="appNugets\Jumuro.Angular.WebApi\module.min.js.map" />
-    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.js.bundle" />
-    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js.map" />
     <Content Include="appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.css.map" />
     <Content Include="appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.less" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\content\components\Modals.less" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\bundle\modalBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\bundle\modalBundle.min.js.map">
+      <DependentUpon>modalBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js.map">
+      <DependentUpon>httpInterceptorBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js.map">
+      <DependentUpon>oauthBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js.map">
+      <DependentUpon>spinnerBundle.min.js</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -94,8 +131,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.js" />
-    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\constants\appConfigConstants.js" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\constants\oAuthConstants.js" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\module.js" />

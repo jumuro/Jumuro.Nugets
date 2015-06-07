@@ -1,7 +1,6 @@
 ﻿'use strict';
 
-angular
-    .module('jumuro.httpInterceptor')
+angular.module('jumuro.httpInterceptor')
     //Service Constants
     .constant('httpInterceptorNotificationChannelConstants', {
         events: {

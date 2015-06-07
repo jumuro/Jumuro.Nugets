@@ -10,9 +10,8 @@
   </settings>
   <!--The order of the <file> elements determines the order of the files in the bundle.-->
   <files>
-    <file>/appNugets/Jumuro.Angular.OAuth/constants/oAuthConstants.js</file>
-    <file>/appNugets/Jumuro.Angular.OAuth/services/oAuthHttpInterceptor.js</file>
-    <file>/appNugets/Jumuro.Angular.OAuth/services/oAuthService.js</file>
-    <file>/appNugets/Jumuro.Angular.OAuth/module.js</file>
+    <file>/appNugets/Jumuro.Angular.Modal/module.js</file>
+    <file>/appNugets/Jumuro.Angular.Modal/services/modalService.js</file>
+    <file>/appNugets/Jumuro.Angular.Modal/controllers/modalController.js</file>
   </files>
 </bundle>
