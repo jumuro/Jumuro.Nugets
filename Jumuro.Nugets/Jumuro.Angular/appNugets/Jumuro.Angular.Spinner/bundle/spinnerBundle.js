@@ -1,17 +1,12 @@
-﻿///#source 1 1 /appNugets/Espa.Angular.Spinner/module.js
-angular.module('espa.spinner', ['espa.httpInterceptor']);
-//.run(['notificationChannel', function (notificationChannel) {
-//    notificationChannel.
-//}])
-///#source 1 1 /appNugets/Espa.Angular.Spinner/directives/espaSpinner.js
+﻿///#source 1 1 /appNugets/Jumuro.Angular.Spinner/directives/jumuroSpinner.js
 'use strict';
 
-angular.module('espa.spinner')
-.directive('espaSpinner', ['notificationChannel', 'notificationChannelSpinner', '$rootScope','$timeout', '$http',
-    function (notificationChannel, notificationChannelSpinner, $rootScope, $timeout, $http) {
+angular.module('jumuro.spinner')
+.directive('jumuroSpinner', ['spinnerNotificationChannelService', '$rootScope', '$timeout', '$http',
+    function (spinnerNotificationChannelService, $rootScope, $timeout, $http) {
     return {
         restrict: "AE",
-        templateUrl: 'appNugets/Espa.Angular.Spinner/templates/spinnerTemplate.html?=v1',
+        templateUrl: 'appNugets/Jumuro.Angular.Spinner/templates/spinnerTemplate.html?=v1',
         link: function (scope, element) {
             //hide the element initially taking into account the pending requests.
             if ($http.pendingRequests.length < 1 ) {
@@ -39,62 +34,59 @@ angular.module('espa.spinner')
                 
             };
 
-            
+            spinnerNotificationChannelService.onRequestStarted(scope, startRequestHandler);
 
-            notificationChannel.onRequestStarted(scope, startRequestHandler);
-
-            notificationChannel.onRequestEnded(scope, endRequestHandler);
-
-            
+            spinnerNotificationChannelService.onRequestEnded(scope, endRequestHandler);
         }
     };
 }]);
-///#source 1 1 /appNugets/Espa.Angular.Spinner/Services/notificationChannelSpinner.js
+///#source 1 1 /appNugets/Jumuro.Angular.Spinner/services/spinnerNotificationChannelService.js
 'use strict';
 
-angular.module('espa.spinner')
+angular.module('jumuro.spinner')
 //Service Constants
-.constant('notificationChannelSpinnerConstants', {
+.constant('spinnerNotificationChannelConstants', {
     events: {
         _START_REPEAT_: '_START_REPEAT_',
         _END_REPEAT_: '_END_REPEAT_'
 
     }
 })
-.service('notificationChannelSpinner', notificationChannelSpinnerService);
+.service('spinnerNotificationChannelService', spinnerNotificationChannelService);
 
-notificationChannelSpinnerService.$inject = ['notificationChannelSpinnerConstants', '$rootScope'];
+spinnerNotificationChannelService.$inject = ['spinnerNotificationChannelConstants', '$rootScope'];
 
-function notificationChannelSpinnerService(notificationChannelConstants, $rootScope) {
+function notificationChannelSpinnerService(spinnerNotificationChannelConstants, $rootScope) {
+    //broadcast event
+    var repeatStarted = function (repeatID) {
+        $rootScope.$broadcast(spinnerNotificationChannelConstants.events._START_REPEAT_, repeatID);
+    };
 
-        //broadcast event
-        var repeatStarted = function (repeatID) {
-            $rootScope.$broadcast(notificationChannelConstants.events._START_REPEAT_, repeatID);
-        };
+    //broadcast event
+    var repeatEnded = function (repeatID) {
+        $rootScope.$broadcast(spinnerNotificationChannelConstants.events._END_REPEAT_, repeatID);
+    };
 
-        //broadcast event
-        var repeatEnded = function (repeatID) {
-            $rootScope.$broadcast(notificationChannelConstants.events._END_REPEAT_, repeatID);
-        };
+    //map event to your handler
+    var onRepeatStarted = function ($scope, handler) {
+        $scope.$on(spinnerNotificationChannelConstants.events._START_REPEAT_, function (event, repeatID) {
+            handler(repeatID);
+        });
+    };
 
-        //map event to your handler
-        var onRepeatEnded = function ($scope, handler) {
-            $scope.$on(notificationChannelConstants.events._END_REPEAT_, function (event, repeatID) {
-                handler(repeatID);
-            });
-        };
+    //map event to your handler
+    var onRepeatEnded = function ($scope, handler) {
+        $scope.$on(spinnerNotificationChannelConstants.events._END_REPEAT_, function (event, repeatID) {
+            handler(repeatID);
+        });
+    };
 
-        //map event to your handler
-        var onRepeatStarted = function ($scope, handler) {
-            $scope.$on(notificationChannelConstants.events._START_REPEAT_, function (event, repeatID) {
-                handler(repeatID);
-            });
-        };
-
-        return {
-            repeatEnded: repeatEnded,
-            onRepeatEnded: onRepeatEnded,
-            repeatStarted: repeatStarted,
-            onRepeatStarted: onRepeatStarted
-        };
+    return {
+        repeatStarted: repeatStarted,
+        repeatEnded: repeatEnded,
+        onRepeatStarted: onRepeatStarted,
+        onRepeatEnded: onRepeatEnded
+    };
 };
+///#source 1 1 /appNugets/Jumuro.Angular.Spinner/module.js
+angular.module('jumuro.spinner', ['jumuro.httpInterceptor']);
