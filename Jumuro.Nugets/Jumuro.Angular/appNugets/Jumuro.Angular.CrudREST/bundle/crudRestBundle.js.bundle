@@ -3,16 +3,14 @@
   <settings>
     <!--Determines if the bundle file should be automatically optimized after creation/update.-->
     <minify>true</minify>
-    <!--Determine whether to generate/re-generate this bundle on building the solution.-->
+    <!--Determin whether to generate/re-generate this bundle on building the solution.-->
     <runOnBuild>false</runOnBuild>
     <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
     <outputDirectory />
   </settings>
   <!--The order of the <file> elements determines the order of the files in the bundle.-->
   <files>
-    <file>/appNugets/Jumuro.Angular.HttpInterceptor/module.js</file>
-    <file>/appNugets/Jumuro.Angular.HttpInterceptor/services/httpInterceptorService.js</file>
-    <file>/appNugets/Jumuro.Angular.HttpInterceptor/services/httpInterceptorNotificationChannelConstants.js</file>
-    <file>/appNugets/Jumuro.Angular.HttpInterceptor/services/httpInterceptorNotificationChannelService.js</file>
+    <file>/appNugets/Espa.Angular.CrudREST/module.js</file>
+    <file>/appNugets/Espa.Angular.CrudREST/services/espaCrudRESTService.js</file>
   </files>
 </bundle>

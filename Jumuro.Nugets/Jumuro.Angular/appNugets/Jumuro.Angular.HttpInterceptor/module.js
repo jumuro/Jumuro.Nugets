@@ -1,1 +1,3 @@
-﻿angular.module('jumuro.httpInterceptor', ['toaster']);
+﻿(function () {
+    angular.module('jumuro.httpInterceptor', ['toaster']);
+})();

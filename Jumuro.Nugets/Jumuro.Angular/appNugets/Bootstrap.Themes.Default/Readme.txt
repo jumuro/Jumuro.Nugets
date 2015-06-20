@@ -1,0 +1,1 @@
+The cssmin grunt plugin doesn't support imports within the css, therefore we must import them within our Index.html, besides is the best practice in terms of performance.
