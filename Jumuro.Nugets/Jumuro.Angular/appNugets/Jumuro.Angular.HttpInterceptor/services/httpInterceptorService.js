@@ -1,36 +1,45 @@
-﻿'use strict';
+﻿(function () {
+    'use strict';
 
-angular.module('jumuro.httpInterceptor')
-    .service('httpInterceptorService', httpInterceptorService);
+    angular.module('jumuro.httpInterceptor')
+        .factory('httpInterceptorService', httpInterceptorService);
 
-httpInterceptorService.$inject = ['$q', '$injector', 'toaster', 'httpInterceptorNotificationChannelService'];
+    httpInterceptorService.$inject = ['$q', '$injector', 'toaster', 'httpInterceptorNotificationChannelFactory'];
 
-function httpInterceptorService($q, $injector, toaster, httpInterceptorNotificationChannelService) {
-    var $http;
+    function httpInterceptorService($q, $injector, toaster, httpInterceptorNotificationChannelFactory) {
+        var $http;
+        var service = {
+            request: request,
+            requestError: requestError,
+            response: response,
+            responseError: responseError
+        };
 
-    return {
+        return service;
+        ///////////////
+
         // optional method
-        'request': function (config) {
+        function request(config) {
             // do something on success
 
             // send notification requests are complete
-            httpInterceptorNotificationChannelService.requestStarted(config);
+            httpInterceptorNotificationChannelFactory.requestStarted(config);
 
             return config;
-        },
+        }
 
         // optional method
-        'requestError': function (rejection) {
+        function requestError(rejection) {
             // do something on error
 
             // send notification requests are complete
-            httpInterceptorNotificationChannelService.requestEnded(rejection);
+            httpInterceptorNotificationChannelFactory.requestEnded(rejection);
 
             return $q.reject(rejection);
-        },
+        }
 
         // optional method
-        'response': function (response) {
+        function response(response) {
             // do something on success
 
             // get $http via $injector because of circular dependency problem
@@ -39,11 +48,10 @@ function httpInterceptorService($q, $injector, toaster, httpInterceptorNotificat
             // don't send notification until all requests are complete
             if ($http.pendingRequests.length < 1) {
                 // send notification requests are complete
-                httpInterceptorNotificationChannelService.requestEnded(response);
+                httpInterceptorNotificationChannelFactory.requestEnded(response);
             }
 
-            if (response != undefined)
-            {
+            if (response != undefined) {
                 if (response.status === 201) {
                     var header = response.headers();
                     if (header.message != undefined) {
@@ -59,19 +67,19 @@ function httpInterceptorService($q, $injector, toaster, httpInterceptorNotificat
             }
 
             return response;
-        },
+        }
 
         // optional method
-        'responseError': function (rejection) {
+        function responseError(rejection) {
             // get $http via $injector because of circular dependency problem
             $http = $http || $injector.get('$http');
             // don't send notification until all requests are complete
             if ($http.pendingRequests.length < 1) {
                 // send notification requests are complete
-                httpInterceptorNotificationChannelService.requestEnded(rejection);
+                httpInterceptorNotificationChannelFactory.requestEnded(rejection);
             }
 
             return $q.reject(rejection);
         }
-    };
-}
+    }
+})();

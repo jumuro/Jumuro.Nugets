@@ -61,6 +61,37 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\custom-variables.css" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.css" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.min.css" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\css\fonts.min.css" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\help\Index.html" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\img\bg.jpg" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\img\hasmenu.png" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\img\logo.png" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\img\user-img.png" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\Readme.txt" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.js" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\services\jumuroCrudRESTService.js" />
+    <Content Include="appNugets\Jumuro.Angular.Directives\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.Directives\module.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\constants\appConfigConstants.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\constants\gruntReplaceSource.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\grunt\ErrorHandling.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\service\exceptionHandlerProvider.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\service\stackTraceService.js" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.js" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\directives\gridDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\directives\onePopoverDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\templates\gridTemplate.html" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\templates\popoverFilterTemplate.html" />
     <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js">
       <DependentUpon>httpInterceptorBundle.js.bundle</DependentUpon>
     </Content>
@@ -69,7 +100,8 @@
     </Content>
     <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\module.js" />
     <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorService.js" />
-    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorNotificationChannel.js" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorNotificationChannelService.js" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorNotificationChannelConstants.js" />
     <Content Include="appNugets\Jumuro.Angular.Modal\bundle\modalBundle.js">
       <DependentUpon>modalBundle.js.bundle</DependentUpon>
     </Content>
@@ -100,6 +132,15 @@
     <Content Include="appNugets\Jumuro.Angular.Spinner\module.js" />
     <Content Include="appNugets\Jumuro.Angular.Spinner\services\spinnerNotificationChannelService.js" />
     <Content Include="appNugets\Jumuro.Angular.Spinner\templates\spinnerTemplate.html" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroColorDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroDecimalDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroEmailDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroIntegerDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroMoneyDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroRangeDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\module.js" />
     <Content Include="appNugets\Jumuro.Angular.WebApi\environments\dev.json" />
     <Content Include="appNugets\Jumuro.Angular.WebApi\environments\live.json" />
     <Content Include="appNugets\Jumuro.Angular.WebApi\environments\test.json" />
@@ -123,6 +164,24 @@
     <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js.map">
       <DependentUpon>spinnerBundle.min.js</DependentUpon>
     </Content>
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.min.js.map" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js.map" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\dev.json" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\live.json" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\test.json" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.min.js.map" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\content\components\jumuroGrid.less" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\custom-variables.css.map" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\custom-variables.less" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.css.map" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.less" />
+    <Content Include="appNugets\Bootstrap.Themes.Default\content\Site.less" />
+    <Content Include="appNugets\Jumuro.Angular.Directives\module.min.js.map" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,7 +206,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="appNugets\Bootstrap.Themes.Default\fonts\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
