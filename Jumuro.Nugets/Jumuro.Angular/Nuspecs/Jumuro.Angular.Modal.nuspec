@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Jumuro.Angular.Modal</id>
+    <version>1.0.0.1</version>
+    <title>Jumuro Angular Modal</title>
+    <authors>Jumuro</authors>
+    <!--<owners></owners>-->
+    <!--<iconUrl></iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Content:
+      Confirm Modal
+      Error Modal
+      Notification Modal
+    </description>
+    <releaseNotes>
+      v1.0.0.1 (Jumuro): First release.
+    </releaseNotes>
+    <copyright>Copyright © CLC 2014</copyright>
+    <tags>Angular, Validations</tags>
+    <dependencies>
+      <dependency id="Angular.UI.Bootstrap" version="0.11.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\appNugets\Jumuro.Angular.Modal\bundle\modalBundle.js" target="content\appNugets\Jumuro.Angular.Modal\bundle\modalBundle.1.0.0.4.js" />
+    <file src="..\appNugets\Jumuro.Angular.Modal\bundle\modalBundle.min.js" target="content\appNugets\Jumuro.Angular.Modal\bundle\modalBundle.1.0.0.4.min.js" />
+    <file src="..\appNugets\Jumuro.Angular.Modal\bundle\modalBundle.min.js.map" target="content\appNugets\Jumuro.Angular.Modal\bundle\modalBundle.1.0.0.4.min.js.map" />
+    <file src="..\appNugets\Jumuro.Angular.Modal\content\components\Modals.less" target="content\appNugets\Jumuro.Angular.Modal\content\components\modals.less" />
+    <file src="..\appNugets\Jumuro.Angular.Modal\templates\modalConfirm.html" target="content\appNugets\Jumuro.Angular.Modal\templates\modalConfirm.html" />
+    <file src="..\appNugets\Jumuro.Angular.Modal\templates\modalError.html" target="content\appNugets\Jumuro.Angular.Modal\templates\modalError.html" />
+    <file src="..\appNugets\Jumuro.Angular.Modal\templates\modalNotification.html" target="content\appNugets\Jumuro.Angular.Modal\templates\modalNotification.html" />
+  </files>
+</package>
