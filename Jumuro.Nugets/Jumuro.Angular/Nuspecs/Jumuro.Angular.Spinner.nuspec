@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Jumuro.Angular.Spinner</id>
+    <version>1.0.0.1</version>
+    <title>Jumuro Angular Spinner</title>
+    <authors>Jumuro</authors>
+    <!--<owners></owners>-->
+    <!--<iconUrl></iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Content:
+      spinner Directive
+      Provide href functionality for any dom object.
+    </description>
+    <copyright>Copyright © CLC 2014</copyright>
+    <tags>Angular, Validations</tags>
+    <dependencies>
+      <dependency id="Jumuro.Angular.HttpInterceptor" version="1.0.0.6" />
+    </dependencies>
+    <releaseNotes>
+      v1.0.0.1 (Jumuro): First release.
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="..\appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.js" target="content\appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.1.0.0.1.js" />
+    <file src="..\appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js" target="content\appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.1.0.0.1.min.js" />
+    <file src="..\appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js.map" target="content\appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.1.0.0.1.min.js.map" />
+    <file src="..\appNugets\Jumuro.Angular.Spinner\templates\spinnerTemplate.html" target="content\appNugets\Jumuro.Angular.Spinner\templates\spinnerTemplate.html" />
+    <file src="..\appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.less" target="content\appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.less" />
+  </files>
+</package>

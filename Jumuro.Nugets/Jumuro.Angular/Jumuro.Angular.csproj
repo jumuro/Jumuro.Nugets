@@ -196,6 +196,7 @@
     <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.min.js.map">
       <DependentUpon>crudRestBundle.min.js</DependentUpon>
     </Content>
+    <Content Include="Nuspecs\Jumuro.Angular.Spinner.nuspec" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
