@@ -79,8 +79,6 @@
     </Content>
     <Content Include="appNugets\Jumuro.Angular.CrudREST\module.js" />
     <Content Include="appNugets\Jumuro.Angular.CrudREST\services\jumuroCrudRESTService.js" />
-    <Content Include="appNugets\Jumuro.Angular.Directives\module.js" />
-    <Content Include="appNugets\Jumuro.Angular.Directives\module.min.js" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\constants\appConfigConstants.js" />
@@ -183,7 +181,6 @@
     <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.css.map" />
     <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.less" />
     <Content Include="appNugets\Bootstrap.Themes.Default\content\Site.less" />
-    <Content Include="appNugets\Jumuro.Angular.Directives\module.min.js.map" />
     <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.js.bundle">
       <SubType>Designer</SubType>
     </Content>
