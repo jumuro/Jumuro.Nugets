@@ -117,6 +117,6 @@
             });
 
             return deferred.promise;
-        };
+        }
     }
 })();

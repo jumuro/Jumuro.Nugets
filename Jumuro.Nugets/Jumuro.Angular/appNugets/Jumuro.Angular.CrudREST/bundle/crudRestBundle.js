@@ -1,18 +1,30 @@
-﻿///#source 1 1 /appNugets/Espa.Angular.CrudREST/module.js
-angular.module('espa.crudRest', []);
-///#source 1 1 /appNugets/Espa.Angular.CrudREST/services/espaCrudRESTService.js
-'use strict';
+﻿///#source 1 1 /appNugets/Jumuro.Angular.CrudREST/module.js
+(function () {
+    'use strict';
 
-angular.module('espa.crudRest')
-.service('espaCrudRESTService', ['$http', '$q', function ($http, $q) {
+    angular.module('jumuro.crudRest', []);
+})();
+///#source 1 1 /appNugets/Jumuro.Angular.CrudREST/services/jumuroCrudRESTService.js
+(function () {
+    'use strict';
 
+    angular.module('jumuro.crudRest')
+        .factory('jumuroCrudRESTService', jumuroCrudRESTService);
+
+    jumuroCrudRESTService.$inject = ['$http', '$q'];
+
+    function jumuroCrudRESTService($http, $q) {
         var headers = {};
+        var service = {
+            restGet: restGet,
+            restPost: restPost,
+            restPut: restPut,
+            restDelete: restDelete
+        };
+        
+        return service;
 
-        //#region Private methods
-
-        //GET service
-        var restGet = function (getURL, isCache, customHeaders) {
-
+        function restGet(getURL, isCache, customHeaders) {
             var httpHeaders = {};
 
             httpHeaders.method = 'GET';
@@ -26,7 +38,7 @@ angular.module('espa.crudRest')
                 }
             }
 
-            var deferred = $q.defer(); 
+            var deferred = $q.defer();
 
             $http(httpHeaders).success(function (data, status, headers, config) {
                 deferred.resolve(data);
@@ -35,11 +47,9 @@ angular.module('espa.crudRest')
             });
 
             return deferred.promise;
-        };
+        }
 
-        //POST service
-        var restPost = function (dataObject, postURL, isCache, customHeaders) {
-
+        function restPost(dataObject, postURL, isCache, customHeaders) {
             var httpHeaders = {};
 
             httpHeaders.method = 'POST';
@@ -63,11 +73,9 @@ angular.module('espa.crudRest')
             });
 
             return deferred.promise;
-        };
+        }
 
-        //PUT service
-        var restPut = function (putObject, putURL, isCache, customHeaders) {
-
+        function restPut(putObject, putURL, isCache, customHeaders) {
             var httpHeaders = {};
 
             httpHeaders.method = 'PUT';
@@ -91,11 +99,9 @@ angular.module('espa.crudRest')
             });
 
             return deferred.promise;
-        };
+        }
 
-        //deleteNumberOfUnit DELETE service
-        var restDelete = function (deleteURL, isCache, customHeaders) {
-
+        function restDelete(deleteURL, isCache, customHeaders) {
             var httpHeaders = {};
 
             httpHeaders.method = 'DELETE';
@@ -118,15 +124,6 @@ angular.module('espa.crudRest')
             });
 
             return deferred.promise;
-        };
-
-        //#endregion Private methods
-
-        return {
-            restGet: restGet,
-            restPost: restPost,
-            restPut: restPut,
-            restDelete: restDelete
-        };
-
-    }]);
+        }
+    }
+})();
