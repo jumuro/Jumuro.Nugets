@@ -10,7 +10,7 @@
   </settings>
   <!--The order of the <file> elements determines the order of the files in the bundle.-->
   <files>
-    <file>/appNugets/Espa.Angular.CrudREST/module.js</file>
-    <file>/appNugets/Espa.Angular.CrudREST/services/espaCrudRESTService.js</file>
+    <file>/appNugets/Jumuro.Angular.CrudREST/module.js</file>
+    <file>/appNugets/Jumuro.Angular.CrudREST/services/jumuroCrudRESTService.js</file>
   </files>
 </bundle>
