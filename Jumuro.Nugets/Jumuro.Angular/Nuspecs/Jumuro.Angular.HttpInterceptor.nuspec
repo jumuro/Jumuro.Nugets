@@ -19,8 +19,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js" target="content\appNugets\Jumuro.Angular.HttpInterceptor\blundle\httpInterceptorBundle.1.0.0.7.js" />
-    <file src="..\appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js" target="content\appNugets\Jumuro.Angular.HttpInterceptor\blundle\httpInterceptorBundle.1.0.0.7.min.js" />
-    <file src="..\appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js.map" target="content\appNugets\Jumuro.Angular.HttpInterceptor\blundle\httpInterceptorBundle.1.0.0.7.min.js.map" />
+    <file src="..\appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js" target="content\appNugets\Jumuro.Angular.HttpInterceptor\blundle\httpInterceptorBundle.1.0.0.1.js" />
+    <file src="..\appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js" target="content\appNugets\Jumuro.Angular.HttpInterceptor\blundle\httpInterceptorBundle.1.0.0.1.min.js" />
+    <file src="..\appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js.map" target="content\appNugets\Jumuro.Angular.HttpInterceptor\blundle\httpInterceptorBundle.1.0.0.1.min.js.map" />
   </files>
 </package>
