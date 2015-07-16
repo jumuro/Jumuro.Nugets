@@ -24,9 +24,9 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.js" target="content\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.1.0.0.8.js" />
-    <file src="..\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.min.js" target="content\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.1.0.0.8.min.js" />
-    <file src="..\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.min.js.map" target="content\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.1.0.0.8.min.js.map" />
+    <file src="..\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.js" target="content\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.1.0.0.1.js" />
+    <file src="..\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.min.js" target="content\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.1.0.0.1.min.js" />
+    <file src="..\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.min.js.map" target="content\appNugets\Jumuro.Angular.Grid\bundle\gridBundle.1.0.0.1.min.js.map" />
     <file src="..\appNugets\Jumuro.Angular.Grid\content\components\JumuroGrid.less" target="content\Content\components\JumuroGrid.less" />
     <file src="..\appNugets\Jumuro.Angular.Grid\templates\popoverFilterTemplate.html" target="content\appNugets\Jumuro.Angular.Grid\templates\popoverFilterTemplate.html" />
     <file src="..\appNugets\Jumuro.Angular.Grid\templates\gridTemplate.html" target="content\appNugets\Jumuro.Angular.Grid\templates\gridTemplate.html" />
