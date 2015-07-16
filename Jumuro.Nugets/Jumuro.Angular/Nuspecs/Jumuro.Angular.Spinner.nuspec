@@ -16,7 +16,7 @@
     <copyright>Copyright © CLC 2014</copyright>
     <tags>Angular, Validations</tags>
     <dependencies>
-      <dependency id="Jumuro.Angular.HttpInterceptor" version="1.0.0.6" />
+      <dependency id="Jumuro.Angular.HttpInterceptor" version="1.0.0.1" />
     </dependencies>
     <releaseNotes>
       v1.0.0.1 (Jumuro): First release.
