@@ -166,7 +166,9 @@
     </Content>
     <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.js.bundle" />
     <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.min.js.map" />
-    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js.bundle">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js.map" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\dev.json" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\live.json" />
@@ -180,8 +182,15 @@
     <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.less" />
     <Content Include="appNugets\Bootstrap.Themes.Default\content\Site.less" />
     <Content Include="appNugets\Jumuro.Angular.Directives\module.min.js.map" />
-    <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.js.bundle">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.min.js.map" />
+    <Content Include="Nuspecs\Jumuro.Angular.CrudREST.nuspec" />
+    <Content Include="Nuspecs\Jumuro.Angular.WebApi.nuspec">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Nuspecs\Jumuro.Angular.Grid.nuspec" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

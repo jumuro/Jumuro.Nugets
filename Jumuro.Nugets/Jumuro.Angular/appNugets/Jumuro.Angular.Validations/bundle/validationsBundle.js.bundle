@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamjumuroceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
   <settings>
     <!--Determines if the bundle file should be automatically optimized after creation/update.-->
     <minify>true</minify>
@@ -10,12 +10,12 @@
   </settings>
   <!--The order of the <file> elements determines the order of the files in the bundle.-->
   <files>
-    <file>/appNugets/Espa.Angular.Validations/module.js</file>
-    <file>/appNugets/Espa.Angular.Validations/directives/espaIntegerDirective.js</file>
-    <file>/appNugets/Espa.Angular.Validations/directives/espaDecimalDirective.js</file>
-    <file>/appNugets/Espa.Angular.Validations/directives/espaColorDirective.js</file>
-    <file>/appNugets/Espa.Angular.Validations/directives/espaEmailDirective.js</file>
-    <file>/appNugets/Espa.Angular.Validations/directives/espaMoneyDirective.js</file>
-    <file>/appNugets/Espa.Angular.Validations/directives/espaRangeDirective.js</file>
+    <file>/appNugets/Jumuro.Angular.Validations/module.js</file>
+    <file>/appNugets/Jumuro.Angular.Validations/directives/jumuroIntegerDirective.js</file>
+    <file>/appNugets/Jumuro.Angular.Validations/directives/jumuroDecimalDirective.js</file>
+    <file>/appNugets/Jumuro.Angular.Validations/directives/jumuroColorDirective.js</file>
+    <file>/appNugets/Jumuro.Angular.Validations/directives/jumuroEmailDirective.js</file>
+    <file>/appNugets/Jumuro.Angular.Validations/directives/jumuroMoneyDirective.js</file>
+    <file>/appNugets/Jumuro.Angular.Validations/directives/jumuroRangeDirective.js</file>
   </files>
 </bundle>
