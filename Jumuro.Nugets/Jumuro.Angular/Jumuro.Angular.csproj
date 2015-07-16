@@ -71,6 +71,12 @@
     <Content Include="appNugets\Bootstrap.Themes.Default\img\logo.png" />
     <Content Include="appNugets\Bootstrap.Themes.Default\img\user-img.png" />
     <Content Include="appNugets\Bootstrap.Themes.Default\Readme.txt" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.js">
+      <DependentUpon>crudRestBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.min.js">
+      <DependentUpon>crudRestBundle.js</DependentUpon>
+    </Content>
     <Content Include="appNugets\Jumuro.Angular.CrudREST\module.js" />
     <Content Include="appNugets\Jumuro.Angular.CrudREST\services\jumuroCrudRESTService.js" />
     <Content Include="appNugets\Jumuro.Angular.Directives\module.js" />
@@ -189,6 +195,10 @@
     <Content Include="Nuspecs\Jumuro.Angular.Grid.nuspec" />
     <Content Include="Nuspecs\Jumuro.Angular.HttpInterceptor.nuspec" />
     <Content Include="Nuspecs\Jumuro.Angular.Modal.nuspec" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.min.js.map">
+      <DependentUpon>crudRestBundle.min.js</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -215,7 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="appNugets\Bootstrap.Themes.Default\fonts\" />
-    <Folder Include="appNugets\Jumuro.Angular.CrudREST\bundle\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
