@@ -10,9 +10,8 @@
   </settings>
   <!--The order of the <file> elements determines the order of the files in the bundle.-->
   <files>
-    <file>/appNugets/Espa.Angular.Grid/module.js</file>
-    <file>/appNugets/Espa.Angular.Grid/directives/gridDirective.js</file>
-    <file>/appNugets/Espa.Angular.Grid/directives/onePopoverDirective.js</file>
-    <file>/appNugets/Espa.Angular.Grid/directives/hideWhenOutDirective.js</file>
+    <file>/appNugets/Jumuro.Angular.Grid/module.js</file>
+    <file>/appNugets/Jumuro.Angular.Grid/directives/gridDirective.js</file>
+    <file>/appNugets/Jumuro.Angular.Grid/directives/onePopoverDirective.js</file>
   </files>
 </bundle>

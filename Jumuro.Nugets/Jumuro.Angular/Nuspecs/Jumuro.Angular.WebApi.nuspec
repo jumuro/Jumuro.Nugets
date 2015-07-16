@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Jumuro.Angular.WebApi</id>
+    <version>1.0.0.1</version>
+    <title>Jumuro Angular WebApì</title>
+    <authors>Jumuro</authors>
+    <!--<owners></owners>-->
+    <!--<iconUrl></iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Jumuro Angular WebApì</description>
+    <releaseNotes>
+      v1.0.0.1 (Jumuro): First release.
+    </releaseNotes>
+    <copyright>Copyright © CLC 2014</copyright>
+    <tags>Angular, WebApi</tags>
+  </metadata>
+  <files>
+    <file src="..\appNugets\Jumuro.Angular.WebApi\constants\webapiConstants.js" target="content\app\constants\nugets\Jumuro.Angular.WebApi\webapiConstants.js" />
+    <file src="..\appNugets\Jumuro.Angular.WebApi\module.js" target="content\appNugets\Jumuro.Angular.WebApi\webapi.1.0.0.1.js" />
+    <file src="..\appNugets\Jumuro.Angular.WebApi\module.min.js" target="content\appNugets\Jumuro.Angular.WebApi\webapi.1.0.0.1.min.js" />
+    <file src="..\appNugets\Jumuro.Angular.WebApi\module.min.js.map" target="content\appNugets\Jumuro.Angular.WebApi\webapi.1.0.0.1.min.js.map" />
+    <file src="..\appNugets\Jumuro.Angular.WebApi\constants\appConfigConstants.js" target="content\appNugets\Jumuro.Angular.WebApi\constants\appConfigConstants.js" />
+    <file src="..\appNugets\Jumuro.Angular.WebApi\constants\gruntReplaceSource.js" target="content\appNugets\Jumuro.Angular.WebApi\constants\gruntReplaceSource.js" />
+    <file src="..\appNugets\Jumuro.Angular.WebApi\environments\dev.json" target="content\appNugets\Jumuro.Angular.WebApi\environments\dev.json" />
+    <file src="..\appNugets\Jumuro.Angular.WebApi\environments\test.json" target="content\appNugets\Jumuro.Angular.WebApi\environments\test.json" />
+    <file src="..\appNugets\Jumuro.Angular.WebApi\environments\live.json" target="content\appNugets\Jumuro.Angular.WebApi\environments\live.json" />
+    <file src="..\appNugets\Jumuro.Angular.WebApi\grunt\WebApi.js" target="content\appNugets\grunt\WebApi.js" />
+  </files>
+</package>

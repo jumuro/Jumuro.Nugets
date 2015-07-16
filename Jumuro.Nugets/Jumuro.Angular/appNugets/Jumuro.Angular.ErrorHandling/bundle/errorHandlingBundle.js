@@ -1,13 +1,15 @@
-﻿///#source 1 1 /appNugets/Espa.Angular.ErrorHandling/module.js
-'use strict';
+﻿///#source 1 1 /appNugets/Jumuro.Angular.ErrorHandling/module.js
+(function () {
+    'use strict';
 
-angular.module('espa.errorHandling', []);
-///#source 1 1 /appNugets/Espa.Angular.ErrorHandling/constants/appConfigConstants.js
+    angular.module('jumuro.errorHandling', []);
+})();
+///#source 1 1 /appNugets/Jumuro.Angular.ErrorHandling/constants/appConfigConstants.js
 angular.module('espa.errorHandling')
   .constant('errorHandlingAppConfigConstants', {
       appConfig: {"errorHanlingApiUrl":"http://localhost:60000/api/error/log"}
   });
-///#source 1 1 /appNugets/Espa.Angular.ErrorHandling/service/stackTraceService.js
+///#source 1 1 /appNugets/Jumuro.Angular.ErrorHandling/service/stackTraceService.js
 // The "stacktrace" library that we included in the Scripts
 // is now in the Global scope; but, we don't want to reference
 // global objects inside the AngularJS components - that's
@@ -26,7 +28,7 @@ angular.module('espa.errorHandling')
 
     }
 );
-///#source 1 1 /appNugets/Espa.Angular.ErrorHandling/service/exceptionHandlerProvider.js
+///#source 1 1 /appNugets/Jumuro.Angular.ErrorHandling/service/exceptionHandlerProvider.js
 // By default, AngularJS will catch errors and log them to
 // the Console. We want to keep that behavior; however, we
 // want to intercept it so that we can also log the errors

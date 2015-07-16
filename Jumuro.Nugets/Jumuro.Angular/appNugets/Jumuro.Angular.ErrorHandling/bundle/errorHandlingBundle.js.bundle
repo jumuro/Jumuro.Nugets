@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamJumuroceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
   <settings>
     <!--Determines if the bundle file should be automatically optimized after creation/update.-->
     <minify>true</minify>
@@ -10,9 +10,9 @@
   </settings>
   <!--The order of the <file> elements determines the order of the files in the bundle.-->
   <files>
-    <file>/appNugets/Espa.Angular.ErrorHandling/module.js</file>
-    <file>/appNugets/Espa.Angular.ErrorHandling/constants/appConfigConstants.js</file>
-    <file>/appNugets/Espa.Angular.ErrorHandling/service/stackTraceService.js</file>
-    <file>/appNugets/Espa.Angular.ErrorHandling/service/exceptionHandlerProvider.js</file>
+    <file>/appNugets/Jumuro.Angular.ErrorHandling/module.js</file>
+    <file>/appNugets/Jumuro.Angular.ErrorHandling/constants/appConfigConstants.js</file>
+    <file>/appNugets/Jumuro.Angular.ErrorHandling/service/stackTraceService.js</file>
+    <file>/appNugets/Jumuro.Angular.ErrorHandling/service/exceptionHandlerProvider.js</file>
   </files>
 </bundle>
