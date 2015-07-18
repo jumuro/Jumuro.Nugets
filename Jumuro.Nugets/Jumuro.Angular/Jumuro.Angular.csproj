@@ -79,8 +79,12 @@
     </Content>
     <Content Include="appNugets\Jumuro.Angular.CrudREST\module.js" />
     <Content Include="appNugets\Jumuro.Angular.CrudREST\services\jumuroCrudRESTService.js" />
-    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js" />
-    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js">
+      <DependentUpon>errorHandlingBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js">
+      <DependentUpon>errorHandlingBundle.js</DependentUpon>
+    </Content>
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\constants\appConfigConstants.js" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\constants\gruntReplaceSource.js" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\grunt\ErrorHandling.js" />
@@ -174,10 +178,6 @@
     <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js.map">
       <DependentUpon>spinnerBundle.min.js</DependentUpon>
     </Content>
-    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js.bundle">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js.map" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\dev.json" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\live.json" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\test.json" />
@@ -206,6 +206,10 @@
     <Content Include="appNugets\Jumuro.Angular.Grid\gridBundle.js.bundle" />
     <Content Include="appNugets\Jumuro.Angular.Grid\gridBundle.min.js.map">
       <DependentUpon>gridBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js.map">
+      <DependentUpon>errorHandlingBundle.min.js</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
