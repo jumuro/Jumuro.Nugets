@@ -4,11 +4,6 @@
 
     angular.module('jumuro.errorHandling', []);
 })();
-///#source 1 1 /appNugets/Jumuro.Angular.ErrorHandling/constants/appConfigConstants.js
-angular.module('espa.errorHandling')
-  .constant('errorHandlingAppConfigConstants', {
-      appConfig: {"errorHanlingApiUrl":"http://localhost:60000/api/error/log"}
-  });
 ///#source 1 1 /appNugets/Jumuro.Angular.ErrorHandling/service/stackTraceService.js
 // The "stacktrace" library that we included in the Scripts
 // is now in the Global scope; but, we don't want to reference
@@ -145,3 +140,8 @@ function exceptionHandlerProvider() {
 
 }
 
+///#source 1 1 /appNugets/Jumuro.Angular.ErrorHandling/constants/appConfigConstants.js
+angular.module('espa.errorHandling')
+  .constant('errorHandlingAppConfigConstants', {
+      appConfig: {"errorHanlingApiUrl":"http://localhost:60000/api/error/log"}
+  });
