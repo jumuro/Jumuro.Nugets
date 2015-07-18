@@ -4,146 +4,57 @@
 
     angular.module('jumuro.validations', []);
 })();
-///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroIntegerDirective.js
+///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroRangeDirective.js
 (function () {
     'use strict';
 
     angular.module('jumuro.validations')
+    //function link(scope, el, attrs, ngModelCtrl) {
 
-    .directive('jumuroInteger', jumuroInteger);
+    //$scope.isInvalid = function (Start, End) {
+    //    if (($scope.form.ESAPricePerPoint[Start].$modelValue < $scope.form.ESAPricePerPoint[End].$modelValue) &&
+    //        ($scope.form.ESAPricePerPoint[End].$modelValue != undefined)) {
+    //        $scope.form.ESAPricePerPoint.$invalid;
+    //        return $scope.form.ESAPricePerPoint[Start].$invalid;
+    //    }
+    //    else {
+    //        return $scope.form.ESAPricePerPoint[Start].$valid;
+    //    }
+    //};
 
-    function jumuroInteger() {
-        var INTEGER_REGEXP = /^\-?\d+$/;
-        return {
-            require: 'ngModel',
-            scope: {
-                zero: '@jumuroIntegerZero'
-            },
-            link: function (scope, elm, attrs, ctrl) {
-                var zero = scope.zero;
-                //if (zero === undefined)
-                //{
-                //    zero = 'false';
-                //}
+    .directive('lowerThan', [
+      function () {
 
-                ctrl.$parsers.unshift(function (viewValue) {
-                    if (viewValue == '' || (INTEGER_REGEXP.test(viewValue) && viewValue < 999999999)
-                        && (zero == 'true' ? (viewValue >= 0) : (viewValue > 0))) {
-                        // it is valid
-                        ctrl.$setValidity('integer', true);
+          var link = function ($scope, $element, $attrs, ctrl) {
 
-                        return viewValue;
-                    } else {
-                        // it is invalid, return undefined (no model update)
-                        ctrl.$setValidity('integer', false);
+              var validate = function (viewValue) {
+                  var comparisonModel = $attrs.lowerThan;
 
-                        return viewValue;
-                    }
-                });
-            }
-        };
-    }
-})();
-///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroDecimalDirective.js
-(function () {
-    'use strict';
-    angular.module('jumuro.validations')
+                  if (!viewValue || !comparisonModel) {
+                      // It's valid because we have nothing to compare against
+                      ctrl.$setValidity('lowerThan', true);
+                  }
 
-    .directive('jumuroDecimal', jumuroDecimal);
+                  // It's valid if model is lower than the model we're comparing against
+                  ctrl.$setValidity('lowerThan', parseInt(viewValue, 10) <= parseInt(comparisonModel, 10));
+                  return viewValue;
+              };
 
-    function jumuroDecimal() {
-        var DECIMAL_REGEXP = /^\d+(\.\d{1,5})?$/;
-        return {
-            require: 'ngModel',
-            link: function (scope, elm, attrs, ctrl) {
-                ctrl.$parsers.unshift(function (viewValue) {
-                    if (viewValue == '' || (DECIMAL_REGEXP.test(viewValue) && viewValue >= 0 && viewValue < 999999999)) {
-                        // it is valid
-                        ctrl.$setValidity('decimal', true);
+              ctrl.$parsers.unshift(validate);
+              ctrl.$formatters.push(validate);
 
-                        return viewValue;
-                    } else {
-                        // it is invalid, return undefined (no model update)
-                        ctrl.$setValidity('decimal', false);
+              $attrs.$observe('lowerThan', function (comparisonModel) {
+                  return validate(ctrl.$viewValue);
+              });
 
-                        return viewValue;
-                    }
-                });
-            }
-        };
-    }
-})();
-///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroColorDirective.js
-(function () {
-    'use strict';
-    angular.module('jumuro.validations')
+          };
 
-    .directive('jumuroColor', jumuroColor);
-
-    function jumuroColor() {
-        return {
-            require: 'ngModel',
-            scope: {
-                colorList: "&jumuroColorlist",
-                colorObject: "@jumuroColorobject"
-            },
-            link: function (scope, elm, attrs, ctrl) {
-                ctrl.$parsers.unshift(function (viewValue) {
-                    var isValidColor = true;
-                    var colorList = scope.colorList();
-                    var colorObject = scope.colorObject;
-                    for (var i = 0; i < colorList.length; i++) {
-                        if (colorList[i].color) {
-                            if (colorList[i].color == viewValue) {
-                                isValidColor = false;
-                                break;
-                            }
-                        }
-                        else if (colorList[i][colorObject].color) {
-                            if (colorList[i][colorObject].color == viewValue) {
-                                isValidColor = false;
-                                break;
-                            }
-                        }
-
-                    }
-
-                    ctrl.$setValidity('color', isValidColor);
-
-                    return viewValue;
-                });
-            }
-        };
-    }
-})();
-///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroEmailDirective.js
-(function () {
-    'use strict';
-    angular.module('jumuro.validations')
-
-    .directive('jumuroEmail', jumuroEmail);
-
-    function jumuroEmail() {
-        var EMAIL_REGEXP = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/;
-        return {
-            require: 'ngModel',
-            link: function (scope, elm, attrs, ctrl) {
-                ctrl.$parsers.unshift(function (viewValue) {
-                    if (viewValue == '' || EMAIL_REGEXP.test(viewValue)) {
-                        // it is valid
-                        ctrl.$setValidity('email', true);
-
-                        return viewValue;
-                    } else {
-                        // it is invalid, return undefined (no model update)
-                        ctrl.$setValidity('email', false);
-
-                        return viewValue;
-                    }
-                });
-            }
-        };
-    }
+          return {
+              require: 'ngModel',
+              link: link
+          };
+      }
+    ]);
 })();
 ///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroMoneyDirective.js
 (function () {
@@ -296,55 +207,144 @@
         };
     });
 })();
-///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroRangeDirective.js
+///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroIntegerDirective.js
 (function () {
     'use strict';
 
     angular.module('jumuro.validations')
-    //function link(scope, el, attrs, ngModelCtrl) {
 
-    //$scope.isInvalid = function (Start, End) {
-    //    if (($scope.form.ESAPricePerPoint[Start].$modelValue < $scope.form.ESAPricePerPoint[End].$modelValue) &&
-    //        ($scope.form.ESAPricePerPoint[End].$modelValue != undefined)) {
-    //        $scope.form.ESAPricePerPoint.$invalid;
-    //        return $scope.form.ESAPricePerPoint[Start].$invalid;
-    //    }
-    //    else {
-    //        return $scope.form.ESAPricePerPoint[Start].$valid;
-    //    }
-    //};
+    .directive('jumuroInteger', jumuroInteger);
 
-    .directive('lowerThan', [
-      function () {
+    function jumuroInteger() {
+        var INTEGER_REGEXP = /^\-?\d+$/;
+        return {
+            require: 'ngModel',
+            scope: {
+                zero: '@jumuroIntegerZero'
+            },
+            link: function (scope, elm, attrs, ctrl) {
+                var zero = scope.zero;
+                //if (zero === undefined)
+                //{
+                //    zero = 'false';
+                //}
 
-          var link = function ($scope, $element, $attrs, ctrl) {
+                ctrl.$parsers.unshift(function (viewValue) {
+                    if (viewValue == '' || (INTEGER_REGEXP.test(viewValue) && viewValue < 999999999)
+                        && (zero == 'true' ? (viewValue >= 0) : (viewValue > 0))) {
+                        // it is valid
+                        ctrl.$setValidity('integer', true);
 
-              var validate = function (viewValue) {
-                  var comparisonModel = $attrs.lowerThan;
+                        return viewValue;
+                    } else {
+                        // it is invalid, return undefined (no model update)
+                        ctrl.$setValidity('integer', false);
 
-                  if (!viewValue || !comparisonModel) {
-                      // It's valid because we have nothing to compare against
-                      ctrl.$setValidity('lowerThan', true);
-                  }
+                        return viewValue;
+                    }
+                });
+            }
+        };
+    }
+})();
+///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroEmailDirective.js
+(function () {
+    'use strict';
+    angular.module('jumuro.validations')
 
-                  // It's valid if model is lower than the model we're comparing against
-                  ctrl.$setValidity('lowerThan', parseInt(viewValue, 10) <= parseInt(comparisonModel, 10));
-                  return viewValue;
-              };
+    .directive('jumuroEmail', jumuroEmail);
 
-              ctrl.$parsers.unshift(validate);
-              ctrl.$formatters.push(validate);
+    function jumuroEmail() {
+        var EMAIL_REGEXP = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/;
+        return {
+            require: 'ngModel',
+            link: function (scope, elm, attrs, ctrl) {
+                ctrl.$parsers.unshift(function (viewValue) {
+                    if (viewValue == '' || EMAIL_REGEXP.test(viewValue)) {
+                        // it is valid
+                        ctrl.$setValidity('email', true);
 
-              $attrs.$observe('lowerThan', function (comparisonModel) {
-                  return validate(ctrl.$viewValue);
-              });
+                        return viewValue;
+                    } else {
+                        // it is invalid, return undefined (no model update)
+                        ctrl.$setValidity('email', false);
 
-          };
+                        return viewValue;
+                    }
+                });
+            }
+        };
+    }
+})();
+///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroDecimalDirective.js
+(function () {
+    'use strict';
+    angular.module('jumuro.validations')
 
-          return {
-              require: 'ngModel',
-              link: link
-          };
-      }
-    ]);
+    .directive('jumuroDecimal', jumuroDecimal);
+
+    function jumuroDecimal() {
+        var DECIMAL_REGEXP = /^\d+(\.\d{1,5})?$/;
+        return {
+            require: 'ngModel',
+            link: function (scope, elm, attrs, ctrl) {
+                ctrl.$parsers.unshift(function (viewValue) {
+                    if (viewValue == '' || (DECIMAL_REGEXP.test(viewValue) && viewValue >= 0 && viewValue < 999999999)) {
+                        // it is valid
+                        ctrl.$setValidity('decimal', true);
+
+                        return viewValue;
+                    } else {
+                        // it is invalid, return undefined (no model update)
+                        ctrl.$setValidity('decimal', false);
+
+                        return viewValue;
+                    }
+                });
+            }
+        };
+    }
+})();
+///#source 1 1 /appNugets/Jumuro.Angular.Validations/directives/jumuroColorDirective.js
+(function () {
+    'use strict';
+    angular.module('jumuro.validations')
+
+    .directive('jumuroColor', jumuroColor);
+
+    function jumuroColor() {
+        return {
+            require: 'ngModel',
+            scope: {
+                colorList: "&jumuroColorlist",
+                colorObject: "@jumuroColorobject"
+            },
+            link: function (scope, elm, attrs, ctrl) {
+                ctrl.$parsers.unshift(function (viewValue) {
+                    var isValidColor = true;
+                    var colorList = scope.colorList();
+                    var colorObject = scope.colorObject;
+                    for (var i = 0; i < colorList.length; i++) {
+                        if (colorList[i].color) {
+                            if (colorList[i].color == viewValue) {
+                                isValidColor = false;
+                                break;
+                            }
+                        }
+                        else if (colorList[i][colorObject].color) {
+                            if (colorList[i][colorObject].color == viewValue) {
+                                isValidColor = false;
+                                break;
+                            }
+                        }
+
+                    }
+
+                    ctrl.$setValidity('color', isValidColor);
+
+                    return viewValue;
+                });
+            }
+        };
+    }
 })();
