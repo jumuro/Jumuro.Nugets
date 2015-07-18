@@ -93,10 +93,10 @@
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\service\stackTraceService.js" />
     <Content Include="appNugets\Jumuro.Angular.Grid\directives\gridDirective.js" />
     <Content Include="appNugets\Jumuro.Angular.Grid\directives\onePopoverDirective.js" />
-    <Content Include="appNugets\Jumuro.Angular.Grid\gridBundle.js">
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.js">
       <DependentUpon>gridBundle.js.bundle</DependentUpon>
     </Content>
-    <Content Include="appNugets\Jumuro.Angular.Grid\gridBundle.min.js">
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.min.js">
       <DependentUpon>gridBundle.js</DependentUpon>
     </Content>
     <Content Include="appNugets\Jumuro.Angular.Grid\module.js" />
@@ -203,8 +203,8 @@
     <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.min.js.map">
       <DependentUpon>validationsBundle.min.js</DependentUpon>
     </Content>
-    <Content Include="appNugets\Jumuro.Angular.Grid\gridBundle.js.bundle" />
-    <Content Include="appNugets\Jumuro.Angular.Grid\gridBundle.min.js.map">
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.min.js.map">
       <DependentUpon>gridBundle.min.js</DependentUpon>
     </Content>
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js.bundle" />
@@ -237,7 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="appNugets\Bootstrap.Themes.Default\fonts\" />
-    <Folder Include="appNugets\Jumuro.Angular.Grid\bundle\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
