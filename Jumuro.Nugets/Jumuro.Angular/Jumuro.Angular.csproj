@@ -118,10 +118,10 @@
     <Content Include="appNugets\Jumuro.Angular.Modal\bundle\modalBundle.min.js">
       <DependentUpon>modalBundle.js</DependentUpon>
     </Content>
-    <Content Include="appNugets\Jumuro.Angular.Modal\controllers\modalController.js" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\controllers\ModalInstanceController.js" />
     <Content Include="appNugets\Jumuro.Angular.Modal\module.js" />
     <Content Include="appNugets\Jumuro.Angular.Modal\services\modalService.js" />
-    <Content Include="appNugets\Jumuro.Angular.Modal\templates\modalConfirm.html" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\templates\modalConfirmation.html" />
     <Content Include="appNugets\Jumuro.Angular.Modal\templates\modalError.html" />
     <Content Include="appNugets\Jumuro.Angular.Modal\templates\modalNotification.html" />
     <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.js">

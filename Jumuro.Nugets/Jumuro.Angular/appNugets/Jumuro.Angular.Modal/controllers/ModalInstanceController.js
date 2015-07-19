@@ -4,11 +4,11 @@
     // Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
     //'mgcrea.ngStrap'
     angular.module('jumuro.modal')
-        .controller('ModalInstanceCtrl', ModalInstanceCtrl);
+        .controller('ModalInstanceController', ModalInstanceController);
 
-    ModalInstanceCtrl.$inject = ['$scope', '$modalInstance', 'modalScope'];
+    ModalInstanceController.$inject = ['$scope', '$modalInstance', 'modalScope'];
 
-    function ModalInstanceCtrl($scope, $modalInstance, modalScope) {
+    function ModalInstanceController($scope, $modalInstance, modalScope) {
         $scope.buttons = modalScope.buttons;
         $scope.message = modalScope.message;
         $scope.headerText = modalScope.headerText;

@@ -12,6 +12,6 @@
   <files>
     <file>/appNugets/Jumuro.Angular.Modal/module.js</file>
     <file>/appNugets/Jumuro.Angular.Modal/services/modalService.js</file>
-    <file>/appNugets/Jumuro.Angular.Modal/controllers/modalController.js</file>
+    <file>/appNugets/Jumuro.Angular.Modal/controllers/ModalInstanceController.js</file>
   </files>
 </bundle>

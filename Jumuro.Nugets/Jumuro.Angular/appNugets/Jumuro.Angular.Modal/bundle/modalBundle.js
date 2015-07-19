@@ -19,21 +19,21 @@
         }
 
         function modal(modalOptions) {
-            var _templateUrl = './appNugets/Jumuro.Angular.Modal/templates/modalNotification.html';
+            var _templateUrl; // = './appNugets/Jumuro.Angular.Modal/templates/modalNotification.html';
 
             if (modalOptions.modalType == 'confirm') {
-                _templateUrl = './appNugets/Jumuro.Angular.Modal/templates/modalConfirm.html';
+                _templateUrl = './appNugets/Jumuro.Angular.Modal/templates/modalConfirmation.html';
             }
             else if (modalOptions.modalType == 'error') {
                 _templateUrl = './appNugets/Jumuro.Angular.Modal/templates/modalError.html?v1';
             }
-            else if (modalOptions.modalType == 'notification') {
+            else { //if (modalOptions.modalType == 'notification') {
                 _templateUrl = './appNugets/Jumuro.Angular.Modal/templates/modalNotification.html';
             }
 
             var modalInstance = $modal.open({
                 templateUrl: _templateUrl,
-                controller: 'modalInstanceCtrl',
+                controller: 'ModalInstanceController',
                 resolve: {
                     modalScope: function () {
                         return modalOptions;
@@ -45,28 +45,29 @@
         }
     }
 })();
-///#source 1 1 /appNugets/Jumuro.Angular.Modal/controllers/modalController.js
-'use strict';
+///#source 1 1 /appNugets/Jumuro.Angular.Modal/controllers/ModalInstanceController.js
+(function () {
+    'use strict';
 
-// Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
-//'mgcrea.ngStrap'
-angular.module('jumuro.modal')
-    .controller('modalInstanceCtrl', modalInstanceCtrl);
+    // Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
+    //'mgcrea.ngStrap'
+    angular.module('jumuro.modal')
+        .controller('ModalInstanceController', ModalInstanceController);
 
-modalInstanceCtrl.$inject = ['$scope', '$modalInstance', 'modalScope'];
+    ModalInstanceController.$inject = ['$scope', '$modalInstance', 'modalScope'];
 
-function modalInstanceCtrl($scope, $modalInstance, modalScope) {
-    $scope.buttons = modalScope.buttons;
-    $scope.message = modalScope.message;
-    $scope.headerText = modalScope.headerText;
-    $scope.details = modalScope.details;
+    function ModalInstanceController($scope, $modalInstance, modalScope) {
+        $scope.buttons = modalScope.buttons;
+        $scope.message = modalScope.message;
+        $scope.headerText = modalScope.headerText;
+        $scope.details = modalScope.details;
 
-    $scope.ok = function () {
-        $modalInstance.close(true);
-    };
+        $scope.ok = function () {
+            $modalInstance.close(true);
+        };
 
-    $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
-    };
-}
-
+        $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+        };
+    }
+})();
