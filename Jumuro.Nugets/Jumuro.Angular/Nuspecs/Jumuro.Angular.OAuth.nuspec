@@ -9,7 +9,6 @@
     <description>Jumuro Angular OAuth 2.0</description>
     <tags>Angular, Services, OAuth</tags>
     <dependencies>
-      <dependency id="Jumuro.Angular.NotificationChannel" version="1.0.0.6" />
       <dependency id="Angular.IpCookie" version="0.1.0" />
       <dependency id="AngularJS-Toaster" version="0.4.7" />
     </dependencies>
