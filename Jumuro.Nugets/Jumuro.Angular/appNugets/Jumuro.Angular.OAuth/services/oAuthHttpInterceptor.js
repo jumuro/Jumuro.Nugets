@@ -7,9 +7,14 @@ angular
 oAuthHttpInterceptor.$inject = ['$q', '$injector', 'ipCookie', 'oAuthConstants', 'toaster', '$location'];
 
 function oAuthHttpInterceptor($q, $injector, ipCookie, oAuthConstants, toaster, $location) {
-    var oAuthInterceptorServiceFactory = {};
+    var service = {
+        request: request,
+        responseError: responseError
+    };
 
-    var _request = function (config) {
+    return service;
+
+    function request(config) {
         if ($location.path() !== '/login') {
             config.headers = config.headers || {};
 
@@ -26,9 +31,9 @@ function oAuthHttpInterceptor($q, $injector, ipCookie, oAuthConstants, toaster, 
         }
 
         return config;
-    };
+    }
 
-    var _responseError = function (rejection) {
+    function responseError(rejection) {
         if (rejection.status === 400) {
             if (rejection.data && rejection.data.message) {
                 toaster.pop('error', "Error", rejection.data.message);
@@ -38,7 +43,6 @@ function oAuthHttpInterceptor($q, $injector, ipCookie, oAuthConstants, toaster, 
                     toaster.pop('error', "Error", rejection.data.error_description);
                 }
             }
-
         }
         else if (rejection.status === 401) {
             var authService = $injector.get('oAuthService');
@@ -70,10 +74,5 @@ function oAuthHttpInterceptor($q, $injector, ipCookie, oAuthConstants, toaster, 
         else {
             return $q.reject(rejection);
         }
-    };
-
-    oAuthInterceptorServiceFactory.request = _request;
-    oAuthInterceptorServiceFactory.responseError = _responseError;
-
-    return oAuthInterceptorServiceFactory;
+    }
 }

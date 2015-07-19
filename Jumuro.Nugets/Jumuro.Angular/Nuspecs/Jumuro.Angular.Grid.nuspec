@@ -11,9 +11,8 @@
       Jumuro Angular Grid
     </description>
     <releaseNotes>
-      v1.0.0.1 (jumuro): First release.
+      v1.0.0.1: First release.
     </releaseNotes>
-    <copyright>Copyright © CLC 2014</copyright>
     <tags>Angular, Grid</tags>
     <dependencies>
       <dependency id="AngularJS.Animate" version="1.2.24" />
