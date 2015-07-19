@@ -10,14 +10,13 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
       Content:
-      Confirm Modal
+      Confirmation Modal
       Error Modal
       Notification Modal
     </description>
     <releaseNotes>
-      v1.0.0.1 (Jumuro): First release.
+      v1.0.0.1: First release.
     </releaseNotes>
-    <copyright>Copyright © CLC 2014</copyright>
     <tags>Angular, Validations</tags>
     <dependencies>
       <dependency id="Angular.UI.Bootstrap" version="0.11.0" />

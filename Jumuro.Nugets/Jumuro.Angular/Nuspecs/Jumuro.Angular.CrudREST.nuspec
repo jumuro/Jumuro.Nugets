@@ -10,9 +10,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Crud REST Angular services</description>
     <releaseNotes>
-      v1.0.0.1 (juz): First release.
+      v1.0.0.1: First release.
     </releaseNotes>
-    <copyright>Copyright © CLC 2014</copyright>
     <tags>Angular, Services</tags>
   </metadata>
   <files>

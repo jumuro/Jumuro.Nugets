@@ -10,9 +10,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Jumuro Angular WebApì</description>
     <releaseNotes>
-      v1.0.0.1 (Jumuro): First release.
+      v1.0.0.1: First release.
     </releaseNotes>
-    <copyright>Copyright © CLC 2014</copyright>
     <tags>Angular, WebApi</tags>
   </metadata>
   <files>

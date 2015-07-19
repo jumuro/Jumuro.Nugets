@@ -13,13 +13,12 @@
       spinner Directive
       Provide href functionality for any dom object.
     </description>
-    <copyright>Copyright © CLC 2014</copyright>
     <tags>Angular, Validations</tags>
     <dependencies>
       <dependency id="Jumuro.Angular.HttpInterceptor" version="1.0.0.1" />
     </dependencies>
     <releaseNotes>
-      v1.0.0.1 (Jumuro): First release.
+      v1.0.0.1: First release.
     </releaseNotes>
   </metadata>
   <files>

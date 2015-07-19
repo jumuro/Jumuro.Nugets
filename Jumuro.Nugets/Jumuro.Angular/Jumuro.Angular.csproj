@@ -130,6 +130,8 @@
     <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js">
       <DependentUpon>oauthBundle.js</DependentUpon>
     </Content>
+    <Content Include="appNugets\Jumuro.Angular.OAuth\constants\gruntReplaceSource.js" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\grunt\oAuth.js" />
     <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.js">
       <DependentUpon>spinnerBundle.js.bundle</DependentUpon>
     </Content>
@@ -211,6 +213,11 @@
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js.map">
       <DependentUpon>errorHandlingBundle.min.js</DependentUpon>
     </Content>
+    <Content Include="Nuspecs\Jumuro.Angular.Validations.nuspec" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\environments\dev.json" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\environments\live.json" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\environments\test.json" />
+    <Content Include="Nuspecs\Jumuro.Angular.OAuth.nuspec" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
