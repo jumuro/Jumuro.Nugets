@@ -1,8 +1,8 @@
 ﻿'use strict';
 
 angular.module('jumuro.spinner')
-.directive('jumuroSpinner', ['spinnerNotificationChannelService', '$rootScope', '$timeout', '$http',
-    function (spinnerNotificationChannelService, $rootScope, $timeout, $http) {
+.directive('jumuroSpinner', ['httpInterceptorNotificationChannelService', '$rootScope', '$timeout', '$http',
+    function (httpInterceptorNotificationChannelService, $rootScope, $timeout, $http) {
     return {
         restrict: "AE",
         templateUrl: 'appNugets/Jumuro.Angular.Spinner/templates/spinnerTemplate.html?=v1',
@@ -33,9 +33,9 @@ angular.module('jumuro.spinner')
                 
             };
 
-            spinnerNotificationChannelService.onRequestStarted(scope, startRequestHandler);
+            httpInterceptorNotificationChannelService.onRequestStarted(scope, startRequestHandler);
 
-            spinnerNotificationChannelService.onRequestEnded(scope, endRequestHandler);
+            httpInterceptorNotificationChannelService.onRequestEnded(scope, endRequestHandler);
         }
     };
 }]);

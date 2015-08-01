@@ -13,7 +13,7 @@ angular.module('jumuro.spinner')
 
 spinnerNotificationChannelService.$inject = ['spinnerNotificationChannelConstants', '$rootScope'];
 
-function notificationChannelSpinnerService(spinnerNotificationChannelConstants, $rootScope) {
+function spinnerNotificationChannelService(spinnerNotificationChannelConstants, $rootScope) {
     //broadcast event
     var repeatStarted = function (repeatID) {
         $rootScope.$broadcast(spinnerNotificationChannelConstants.events._START_REPEAT_, repeatID);
