@@ -1,9 +1,11 @@
-﻿///#source 1 1 /appNugets/Jumuro.Angular.Spinner/directives/jumuroSpinner.js
+﻿///#source 1 1 /appNugets/Jumuro.Angular.Spinner/module.js
+angular.module('jumuro.spinner', ['jumuro.httpInterceptor']);
+///#source 1 1 /appNugets/Jumuro.Angular.Spinner/directives/jumuroSpinner.js
 'use strict';
 
 angular.module('jumuro.spinner')
-.directive('jumuroSpinner', ['spinnerNotificationChannelService', '$rootScope', '$timeout', '$http',
-    function (spinnerNotificationChannelService, $rootScope, $timeout, $http) {
+.directive('jumuroSpinner', ['httpInterceptorNotificationChannelService', '$rootScope', '$timeout', '$http',
+    function (httpInterceptorNotificationChannelService, $rootScope, $timeout, $http) {
     return {
         restrict: "AE",
         templateUrl: 'appNugets/Jumuro.Angular.Spinner/templates/spinnerTemplate.html?=v1',
@@ -34,9 +36,9 @@ angular.module('jumuro.spinner')
                 
             };
 
-            spinnerNotificationChannelService.onRequestStarted(scope, startRequestHandler);
+            httpInterceptorNotificationChannelService.onRequestStarted(scope, startRequestHandler);
 
-            spinnerNotificationChannelService.onRequestEnded(scope, endRequestHandler);
+            httpInterceptorNotificationChannelService.onRequestEnded(scope, endRequestHandler);
         }
     };
 }]);
@@ -56,7 +58,7 @@ angular.module('jumuro.spinner')
 
 spinnerNotificationChannelService.$inject = ['spinnerNotificationChannelConstants', '$rootScope'];
 
-function notificationChannelSpinnerService(spinnerNotificationChannelConstants, $rootScope) {
+function spinnerNotificationChannelService(spinnerNotificationChannelConstants, $rootScope) {
     //broadcast event
     var repeatStarted = function (repeatID) {
         $rootScope.$broadcast(spinnerNotificationChannelConstants.events._START_REPEAT_, repeatID);
@@ -88,5 +90,3 @@ function notificationChannelSpinnerService(spinnerNotificationChannelConstants, 
         onRepeatEnded: onRepeatEnded
     };
 };
-///#source 1 1 /appNugets/Jumuro.Angular.Spinner/module.js
-angular.module('jumuro.spinner', ['jumuro.httpInterceptor']);

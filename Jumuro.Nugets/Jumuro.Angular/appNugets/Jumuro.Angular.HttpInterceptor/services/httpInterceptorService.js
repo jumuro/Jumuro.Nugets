@@ -4,7 +4,7 @@
     angular.module('jumuro.httpInterceptor')
         .factory('httpInterceptorService', httpInterceptorService);
 
-    httpInterceptorService.$inject = ['$q', '$injector', 'toaster', 'httpInterceptorNotificationChannelFactory'];
+    httpInterceptorService.$inject = ['$q', '$injector', 'toaster', 'httpInterceptorNotificationChannelService'];
 
     function httpInterceptorService($q, $injector, toaster, httpInterceptorNotificationChannelFactory) {
         var $http;
