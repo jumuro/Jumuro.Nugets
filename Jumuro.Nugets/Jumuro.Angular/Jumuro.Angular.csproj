@@ -61,16 +61,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\custom-variables.css" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.css" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.min.css" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\css\fonts.min.css" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\help\Index.html" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\img\bg.jpg" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\img\hasmenu.png" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\img\logo.png" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\img\user-img.png" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\Readme.txt" />
     <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.js">
       <DependentUpon>crudRestBundle.js.bundle</DependentUpon>
     </Content>
@@ -180,11 +170,6 @@
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\live.json" />
     <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\test.json" />
     <Content Include="appNugets\Jumuro.Angular.Grid\content\components\jumuroGrid.less" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\custom-variables.css.map" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\custom-variables.less" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.css.map" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\content\components\general.less" />
-    <Content Include="appNugets\Bootstrap.Themes.Default\content\Site.less" />
     <Content Include="Nuspecs\Jumuro.Angular.CrudREST.nuspec" />
     <Content Include="Nuspecs\Jumuro.Angular.WebApi.nuspec">
       <SubType>Designer</SubType>
@@ -242,9 +227,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="appNugets\Bootstrap.Themes.Default\fonts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
