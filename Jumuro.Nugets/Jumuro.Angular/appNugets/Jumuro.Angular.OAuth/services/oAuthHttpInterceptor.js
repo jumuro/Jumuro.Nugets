@@ -35,6 +35,8 @@ function oAuthHttpInterceptor($q, $injector, ipCookie, oAuthConstants, toaster, 
 
     function responseError(rejection) {
         if (rejection.status === 400) {
+            var toaster = toaster || $injector.get('toaster');
+            
             if (rejection.data && rejection.data.message) {
                 toaster.pop('error', "Error", rejection.data.message);
             }
