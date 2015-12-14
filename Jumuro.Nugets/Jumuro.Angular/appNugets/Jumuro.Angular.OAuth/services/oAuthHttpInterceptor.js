@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 angular
     .module('jumuro.oAuth')
@@ -71,8 +71,7 @@ function oAuthHttpInterceptor($q, $injector, ipCookie, oAuthConstants, toaster, 
                 toaster.pop('error', "Error", rejection.data);
             }
         }
-        else {
-            return $q.reject(rejection);
-        }
+
+        return $q.reject(rejection);
     }
 }
