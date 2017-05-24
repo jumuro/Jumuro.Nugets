@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Jumuro.Angular.OAuth</id>
+    <version>1.0.0.1</version>
+    <title>Jumuro Angular OAuth 2.0</title>
+    <authors>Jumuro</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Jumuro Angular OAuth 2.0</description>
+    <tags>Angular, Services, OAuth</tags>
+    <dependencies>
+      <dependency id="Angular.IpCookie" version="0.1.0" />
+      <dependency id="AngularJS-Toaster" version="0.4.7" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.js" target="content\appNugets\Jumuro.Angular.OAuth\bundles\oauth.1.0.0.1.js" />
+    <file src="..\appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js" target="content\appNugets\Jumuro.Angular.OAuth\bundles\oauth.1.0.0.1.min.js" />
+    <file src="..\appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js.map" target="content\appNugets\Jumuro.Angular.OAuth\bundles\oauth.1.0.0.1.min.js.map" />
+    <file src="..\appNugets\Jumuro.Angular.OAuth\constants\appConfigConstants.js" target="content\appNugets\Jumuro.Angular.OAuth\constants\appConfigConstants.js" />
+    <file src="..\appNugets\Jumuro.Angular.OAuth\constants\gruntReplaceSource.js" target="content\appNugets\Jumuro.Angular.OAuth\constants\gruntReplaceSource.js" />
+    <file src="..\appNugets\Jumuro.Angular.OAuth\environments\dev.json" target="content\appNugets\Jumuro.Angular.OAuth\environments\dev.json" />
+    <file src="..\appNugets\Jumuro.Angular.OAuth\environments\test.json" target="content\appNugets\Jumuro.Angular.OAuth\environments\test.json" />
+    <file src="..\appNugets\Jumuro.Angular.OAuth\environments\live.json" target="content\appNugets\Jumuro.Angular.OAuth\environments\live.json" />
+    <file src="..\appNugets\Jumuro.Angular.OAuth\grunt\OAuth.js" target="content\appNugets\grunt\OAuth.js" />
+  </files>
+</package>

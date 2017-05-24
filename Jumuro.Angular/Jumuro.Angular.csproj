@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{187363BA-227D-436E-A5D7-90ACA243731C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jumuro.Angular</RootNamespace>
+    <AssemblyName>Jumuro.Angular</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.js">
+      <DependentUpon>crudRestBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.min.js">
+      <DependentUpon>crudRestBundle.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\services\jumuroCrudRESTService.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js">
+      <DependentUpon>errorHandlingBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js">
+      <DependentUpon>errorHandlingBundle.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\constants\appConfigConstants.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\constants\gruntReplaceSource.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\grunt\ErrorHandling.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\service\exceptionHandlerProvider.js" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\service\stackTraceService.js" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\directives\gridDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\directives\onePopoverDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.js">
+      <DependentUpon>gridBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.min.js">
+      <DependentUpon>gridBundle.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Grid\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\templates\gridTemplate.html" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\templates\popoverFilterTemplate.html" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js">
+      <DependentUpon>httpInterceptorBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js">
+      <DependentUpon>httpInterceptorBundle.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorService.js" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorNotificationChannelService.js" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\services\httpInterceptorNotificationChannelConstants.js" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\bundle\modalBundle.js">
+      <DependentUpon>modalBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Modal\bundle\modalBundle.min.js">
+      <DependentUpon>modalBundle.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Modal\controllers\ModalInstanceController.js" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\services\modalService.js" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\templates\modalConfirmation.html" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\templates\modalError.html" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\templates\modalNotification.html" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.js">
+      <DependentUpon>oauthBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js">
+      <DependentUpon>oauthBundle.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.OAuth\constants\gruntReplaceSource.js" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\grunt\oAuth.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.js">
+      <DependentUpon>spinnerBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js">
+      <DependentUpon>spinnerBundle.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.css" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\directives\jumuroSpinner.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\directives\jumuroSpinnerFinishRepeat.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\services\spinnerNotificationChannelService.js" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\templates\spinnerTemplate.html" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.js">
+      <DependentUpon>validationsBundle.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.min.js">
+      <DependentUpon>validationsBundle.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroColorDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroDecimalDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroEmailDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroIntegerDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroMoneyDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\directives\jumuroRangeDirective.js" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\environments\dev.json" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\environments\live.json" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\environments\test.json" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\module.min.js.map" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.css.map" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\content\components\cssspinner.less" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\content\components\Modals.less" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\bundle\modalBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Modal\bundle\modalBundle.min.js.map">
+      <DependentUpon>modalBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.HttpInterceptor\bundle\httpInterceptorBundle.min.js.map">
+      <DependentUpon>httpInterceptorBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Spinner\bundle\spinnerBundle.min.js.map">
+      <DependentUpon>spinnerBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\dev.json" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\live.json" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\environments\test.json" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\content\components\jumuroGrid.less" />
+    <Content Include="Nuspecs\Jumuro.Angular.CrudREST.nuspec" />
+    <Content Include="Nuspecs\Jumuro.Angular.WebApi.nuspec">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Nuspecs\Jumuro.Angular.Grid.nuspec" />
+    <Content Include="Nuspecs\Jumuro.Angular.HttpInterceptor.nuspec" />
+    <Content Include="Nuspecs\Jumuro.Angular.Modal.nuspec" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.min.js.map">
+      <DependentUpon>crudRestBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="Nuspecs\Jumuro.Angular.Spinner.nuspec" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Validations\bundle\validationsBundle.min.js.map">
+      <DependentUpon>validationsBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.Grid\bundle\gridBundle.min.js.map">
+      <DependentUpon>gridBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js.map">
+      <DependentUpon>errorHandlingBundle.min.js</DependentUpon>
+    </Content>
+    <Content Include="Nuspecs\Jumuro.Angular.Validations.nuspec" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\environments\dev.json" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\environments\live.json" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\environments\test.json" />
+    <Content Include="Nuspecs\Jumuro.Angular.OAuth.nuspec" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.js.bundle" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\bundles\oauthBundle.min.js.map">
+      <DependentUpon>oauthBundle.min.js</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appNugets\Jumuro.Angular.OAuth\constants\appConfigConstants.js" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\constants\oAuthConstants.js" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\services\oAuthHttpInterceptor.js" />
+    <Content Include="appNugets\Jumuro.Angular.OAuth\services\oAuthService.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\constants\appConfigConstants.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\constants\gruntReplaceSource.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\constants\webapiConstants.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\grunt\WebApi.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\module.js" />
+    <Content Include="appNugets\Jumuro.Angular.WebApi\module.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50573</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50573/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

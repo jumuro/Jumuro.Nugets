@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Espa.Angular.ErrorHandling</id>
+        <version>1.0.0.6</version>
+        <title>ESPA Angular Error Handler</title>
+        <authors>MRI</authors>
+        <owners>MRI</owners>
+        <iconUrl>http://webserver/TaskManagerImages/espaicon.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Content:
+
+If you want to use it please go the project Url.</description>
+      <releaseNotes>
+        v1.0.0.1 (mri): first release.
+        v1.0.0.6 (mri): localhost functionality.
+      </releaseNotes>
+        <copyright>Copyright © CLC 2014</copyright>
+        <tags>Angular, Services, Error Handling</tags>
+    </metadata>
+    <files>
+      <file src="..\appNugets\Espa.Angular.ErrorHandling\bundle\errorHandlingBundle.js" target="content\appNugets\Espa.Angular.ErrorHandling\bundle\errorHandlingBundle.1.0.0.6.js" />
+      <file src="..\appNugets\Espa.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js" target="content\appNugets\Espa.Angular.ErrorHandling\bundle\errorHandlingBundle.1.0.0.6.min.js" />
+      <file src="..\appNugets\Espa.Angular.ErrorHandling\bundle\errorHandlingBundle.min.js.map" target="content\appNugets\Espa.Angular.ErrorHandling\bundle\errorHandlingBundle.1.0.0.6.min.js.map" />
+      <file src="..\Scripts\stacktrace.js" target="content\Scripts\stacktrace.js" />
+      <file src="..\Scripts\stacktrace.min.js" target="content\Scripts\stacktrace.min.js" />
+      <file src="..\Scripts\stacktrace.min.js.map" target="content\Scripts\stacktrace.min.js.map" />
+      <file src="..\appNugets\Espa.Angular.ErrorHandling\constants\appConfigConstants.js" target="content\appNugets\Espa.Angular.ErrorHandling\constants\appConfigConstants.js" />
+      <file src="..\appNugets\Espa.Angular.ErrorHandling\constants\gruntReplaceSource.js" target="content\appNugets\Espa.Angular.ErrorHandling\constants\gruntReplaceSource.js" />
+      <file src="..\appNugets\Espa.Angular.ErrorHandling\environments\dev.json" target="content\appNugets\Espa.Angular.ErrorHandling\environments\dev.json" />
+      <file src="..\appNugets\Espa.Angular.ErrorHandling\environments\test.json" target="content\appNugets\Espa.Angular.ErrorHandling\environments\test.json" />
+      <file src="..\appNugets\Espa.Angular.ErrorHandling\environments\live.json" target="content\appNugets\Espa.Angular.ErrorHandling\environments\live.json" />
+      <file src="..\appNugets\Espa.Angular.ErrorHandling\grunt\errorHandling.js" target="content\appNugets\grunt\errorHandling.js" />
+    </files>
+</package>

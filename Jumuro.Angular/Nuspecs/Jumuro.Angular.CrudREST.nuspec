@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Jumuro.Angular.CrudREST</id>
+    <version>1.0.0.1</version>
+    <title>Jumuro Angular Services CRUD REST</title>
+    <authors>Jumuro</authors>
+    <owners>Jumuro</owners>
+    <!--<iconUrl></iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Crud REST Angular services</description>
+    <releaseNotes>
+      v1.0.0.1: First release.
+    </releaseNotes>
+    <tags>Angular, Services</tags>
+  </metadata>
+  <files>
+    <file src="..\appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.js" target="content\appNugets\Jumuro.Angular.CrudREST\bundle\crudResTBundle.1.0.0.1.js" />
+    <file src="..\appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.min.js" target="content\appNugets\Jumuro.Angular.CrudREST\bundle\crudResTBundle.1.0.0.1.min.js" />
+    <file src="..\appNugets\Jumuro.Angular.CrudREST\bundle\crudRestBundle.min.js.map" target="content\appNugets\Jumuro.Angular.CrudREST\bundle\crudResTBundle.1.0.0.1.min.js.map" />
+  </files>
+</package>

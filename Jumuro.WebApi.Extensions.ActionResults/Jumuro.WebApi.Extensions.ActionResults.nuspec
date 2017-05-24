@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Jumuro.WebApi.Extensions.ActionResults</id>
+    <version>1.0.0.1</version>
+    <title>Jumuro WebApi Action Results Extensions</title>
+    <authors>Jumuro</authors>
+    <!--<projectUrl></projectUrl>
+        <iconUrl></iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>WebApi Action Results Extensions.</description>
+    <releaseNotes>
+      1.0.0.0 - First Version.
+      1.0.0.1 - Some improvements.
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="bin\Debug\Jumuro.WebApi.Extensions.ActionResults.dll" target="lib\net451\Jumuro.WebApi.Extensions.ActionResults.dll" />
+  </files>
+</package>
