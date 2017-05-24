@@ -1,3 +1,5 @@
+*Read this in other languages: [Español](README.es-ES.md)*
+
 # Paquetes NuGet .NET
 
 ### Jumuro.Security.Cryptography
