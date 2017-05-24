@@ -1,3 +1,5 @@
+*Read this in other languages: [Español](README.es-ES.md)*
+
 # Paquetes NuGet .NET
 
 ### Jumuro.Security.Cryptography
@@ -37,7 +39,7 @@ Implementa un servicio AngularJS para mostrar ventanas modales de confirmación,
 
 ### Jumuro.Angular.OAuth
 
-Dada la relación directa con la parte central de este proyecto, merece la pena que veamos éste paquete con más detalle.
+Dada la relación directa con la parte central del repositorio [jumuro/OAuthServer](https://github.com/jumuro/OAuthServer), merece la pena que veamos éste paquete con más detalle.
 
 Implementa dos servicios, el primero se llama `oAuthService` y se utiliza para gestionar la solicitud de tokens de acceso mediante el envío de las credenciales de usuario y mediante el envío del token de refresco. 
 
