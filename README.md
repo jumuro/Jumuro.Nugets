@@ -1,5 +1,7 @@
 *Read this in other languages: [Español](README.es-ES.md)*
 
+To be translated...
+
 # Paquetes NuGet .NET
 
 ### Jumuro.Security.Cryptography
